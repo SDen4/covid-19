@@ -1,4 +1,4 @@
-import "./scripts/sum";
+import "./scripts/parser";
 import "./styles/css/main.css";
 import "./styles/scss/main.scss";
 

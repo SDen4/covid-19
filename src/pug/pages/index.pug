@@ -5,7 +5,35 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Covid-19
   body
-    .wrapper
+    .container
+      section.content.content__left
+        h1.title Covid-19 in Russia
+        .data
+          .wrapper
+            .data__day На 09 апреля 2020 г.:
+            .data__common Общие данные за последний день
+            .data__detailed
+              .data__row
+                button.data__button(type="button") Данные
+                .data__display 100
+              .data__row
+                button.data__button(type="button") Данные
+                .data__display 100
+              .data__row
+                button.data__button(type="button") Данные
+                .data__display 100
+              .data__row
+                button.data__button(type="button") Данные
+                .data__display 100
+              .data__row
+                button.data__button(type="button") Данные
+                .data__display 100
+      section.content.content__right
+        .data.graph
+          .wrapper
+            .graph__info
+        .data.graph_detailed
+          .wrapper
 
 
 
