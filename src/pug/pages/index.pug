@@ -10,24 +10,28 @@ html(lang='en')
         h1.title Covid-19 in Russia
         .data
           .wrapper
-            .data__day На 09 апреля 2020 г.:
-            .data__common Общие данные за последний день
+            .data__day Сегодня 09 апреля 2020 г.
+            .data__common
+              .data__common-title Общие данные за последний день
+              .data__common-info
+                .data__common__bottom.data__common__ill 100
+                .data__common__bottom.data__common__dead 100
+                .data__common__bottom.data__common__recover 100
             .data__detailed
-              .data__row
-                button.data__button(type="button") Данные
+              .data__detailed-title Общие данные за весь период
+              label.data__row
+                input.data__input(type="checkbox")
+                .data__button(type="button") Заболело
+                .data__display 100
+              label.data__row
+                input.data__input(type="checkbox")
+                .data__button(type="button") Умерло
+                .data__display 100
+              label.data__row
+                input.data__input(type="checkbox")
+                .data__button(type="button") Выздоровело
                 .data__display 100
               .data__row
-                button.data__button(type="button") Данные
-                .data__display 100
-              .data__row
-                button.data__button(type="button") Данные
-                .data__display 100
-              .data__row
-                button.data__button(type="button") Данные
-                .data__display 100
-              .data__row
-                button.data__button(type="button") Данные
-                .data__display 100
       section.content.content__right
         .data.graph
           .wrapper
