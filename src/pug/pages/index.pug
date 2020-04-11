@@ -4,6 +4,12 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Covid-19
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+    script(src='https://code.highcharts.com/highcharts.js')
+    script(src='https://code.highcharts.com/highcharts-3d.js')
+    script(src='https://code.highcharts.com/modules/exporting.js')
+    script(src='https://code.highcharts.com/modules/export-data.js')
+    script(src='https://code.highcharts.com/modules/accessibility.js')
   body
     .container
       section.content.content__left
@@ -36,7 +42,31 @@ html(lang='en')
       section.content.content__right
         .data.graph
           .wrapper
-            .graph__info
+            //-plugin Highcharts
+            figure.highcharts-figure
+              #container
+              p.highcharts-description Настройки графика
+              #sliders
+                table
+                  tbody
+                    tr
+                      td
+                        label(for='alpha') Alpha Angle
+                      td
+                        input#alpha(type='range', min='0', max='45', value='15')
+                        span#alpha-value.value
+                    tr
+                      td
+                        label(for='beta') Beta Angle
+                      td
+                        input#beta(type='range', min='-45', max='45', value='15')
+                        span#beta-value.value
+                    tr
+                      td
+                        label(for='depth') Depth
+                      td
+                        input#depth(type='range', min='20', max='100', value='50')
+                        span#depth-value.value
         .data.graph_detailed
           .wrapper
 
