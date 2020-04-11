@@ -1,3 +1,26 @@
+import ill from "../json/ill.json"
+import death from "../json/dead.json"
+import recover from "../json/recover.json"
+
+
+let illness = [];
+let deaths = [];
+let recovers = [];
+
+for (let item in ill) {
+    illness.push(ill[item]);
+}
+for (let item in death) {
+    deaths.push(death[item]);
+}
+for (let item in recover) {
+    recovers.push(recover[item]);
+}
+
+
+
+
+
 // Set up the chart
 var chart = new Highcharts.Chart({
     chart: {
@@ -15,6 +38,7 @@ var chart = new Highcharts.Chart({
     credits: {
         enabled: false
     },
+    colors: ['#D2691E', '#4B0082', '#008000'],
     title: {
         text: 'Динамика распространения короновируса в России'
     },
@@ -29,7 +53,7 @@ var chart = new Highcharts.Chart({
         }
     },
     subtitle: {
-        text: 'тест тест тест'
+        text: 'Источники инофрмации: WHO, Яндекс'
     },
     plotOptions: {
         column: {
@@ -38,13 +62,13 @@ var chart = new Highcharts.Chart({
     },
     series: [{
         name: "Заболело",
-        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        data: illness
     },{
         name: "Умерло",
-        data: [9.9, 1.5, 6.4, 9.2, 4.0, 6.0, 5.6, 1.5, 2.4, 1.1, 9.6, 5.4]
+        data: deaths
     },{
         name: "Выздоровело",
-        data: [9.9, 7.5, 10.4, 12.2, 14.0, 17.0, 13.6, 14.5, 21.4, 19.1, 9.6, 5.4]
+        data: recovers
     }],
     
 });
