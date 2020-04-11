@@ -6,6 +6,10 @@
     height: 24%;
 }
 
+.highcharts-figure {
+    margin: 0;
+}
+
 #container {
     height: 500px;
     margin-bottom: 40px;
@@ -16,14 +20,25 @@
     display: inline;
 }
 
-.highcharts-description {
-    margin-bottom: 10px;
+#sliders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $red;
+    border-radius: $borderRadius;
+    height: 15%;
+}
+
+.wrapper_sliders {
+    justify-content: space-evenly;
 }
 
 .charts_body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .charts_td {
@@ -32,4 +47,5 @@
     width: 32%;
     border: 1px solid $mainColor;
     border-radius: $borderRadius;
+    flex-wrap: wrap;
 }

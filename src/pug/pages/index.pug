@@ -21,9 +21,15 @@ html(lang='en')
             .data__common
               .data__common-title Текущие данные за последний день
               .data__common-info
-                .data__common__bottom.data__common__ill
-                .data__common__bottom.data__common__dead
-                .data__common__bottom.data__common__recover
+                .data__common__bottom
+                  .data__common_subtitle Заболело
+                  .data__common__ill
+                .data__common__bottom
+                  .data__common_subtitle Умерло
+                  .data__common__dead
+                .data__common__bottom
+                  .data__common_subtitle Выздоровело
+                  .data__common__recover
             .data__detailed
               .data__detailed-title Общие данные за весь период
               label.data__row
@@ -38,28 +44,28 @@ html(lang='en')
                 input.data__input(type="checkbox")
                 .data__button(type="button") Выздоровело
                 .data__display.data__display_recover
-              .data__row
       section.content.content__right
         .data.graph
           .wrapper
             //-plugin Highcharts
             figure.highcharts-figure
               #container
-              p.highcharts-description Настройки графика
               #sliders
-                .charts_body
-                  .charts_td
-                    label(for='alpha') X
-                    input#alpha(type='range', min='0', max='45', value='15')
-                    span#alpha-value.value
-                  .charts_td
-                    label(for='beta') Y
-                    input#beta(type='range', min='-45', max='45', value='15')
-                    span#beta-value.value
-                  .charts_td
-                    label(for='depth') Z
-                    input#depth(type='range', min='20', max='100', value='50')
-                    span#depth-value.value
+                .wrapper.wrapper_sliders
+                  p Настройки графика
+                  .charts_body
+                    .charts_td
+                      label(for='alpha') X
+                      input#alpha(type='range', min='0', max='45', value='15')
+                      span#alpha-value.value
+                    .charts_td
+                      label(for='beta') Y
+                      input#beta(type='range', min='-45', max='45', value='15')
+                      span#beta-value.value
+                    .charts_td
+                      label(for='depth') Z
+                      input#depth(type='range', min='20', max='100', value='50')
+                      span#depth-value.value
         .data.graph_detailed
           .wrapper
             .graph_detailed-notice Источники инофрмации: WHO, Яндекс

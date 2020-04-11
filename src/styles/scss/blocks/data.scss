@@ -12,8 +12,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 98%;
-    height: 98%;
+    width: 92%;
+    height: 94%;
 }
 
 .data__day, .data__detailed-title {
@@ -26,16 +26,15 @@
 .data__common {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
-    height: 10%;
     background-color: $red;
     border-radius: $borderRadius;
 }
 
 .data__common-title {
-    width: 100%;
-    height: 30%;
-    margin-left: 10px;
+    width: 92%;
+    margin:10px 0 10px 10px;
 }
 
 .data__common-info {
@@ -43,17 +42,37 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 70%;
+    margin-bottom: 10px;
+    @include desktop {
+        flex-direction: column;
+    }
 }
 
 .data__common__bottom {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 65%;
+    padding: 5px 0;
+    width: 32%;
     border: 1px solid $mainColor;
     border-radius: $borderRadius;
+    @include desktop {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        width: 96%;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.data__common_subtitle {
+    @include desktop {
+        min-width: 110px;
+        margin: 0 5%;
+    }
 }
 
 .data__detailed {
@@ -61,11 +80,26 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-    height: 80%;
+    height: 75%;
+
+    @include desktop {
+        height: 65%;
+    }
+
+    @include tablets {
+        height: 47%;
+    }
+
+    @include smartphone {
+        height: 43%;
+    }
 }
 
 .data__detailed-title {
     margin-bottom: 20px;
+    @include tablet {
+        margin-bottom: 10px;
+    }
 }
 
 .data__row {
@@ -74,6 +108,9 @@
     position: relative;
     min-height: 50px;
     margin-bottom: 20px;
+    @include tablet {
+        margin-bottom: 10px;
+    }
 }
 
 .data__input:checked+.data__button{

@@ -1,9 +1,16 @@
-import ill from "../json/ill.json"
-import death from "../json/dead.json"
-import recover from "../json/recover.json"
+import ill from "../json/ill.json";
+import death from "../json/dead.json";
+import recover from "../json/recover.json";
+
+const lastIllDisplay = document.querySelector(".data__display_ill"),
+      lastDeathDisplay = document.querySelector(".data__display_dead"),
+      lastRecoverDisplay = document.querySelector(".data__display_recover"),
+      curIllDisplay = document.querySelector(".data__common__ill"),
+      curDeathDisplay = document.querySelector(".data__common__dead"),
+      curRecoverDisplay = document.querySelector(".data__common__recover");
 
 
-//arrays of data illness, deaths and recovers
+//arrays of data: illness, deaths and recovers
 let illness = [], deaths = [], recovers = [];
 for (let item in ill) {
     illness.push(ill[item]);
@@ -17,30 +24,20 @@ for (let item in recover) {
 
 
 // the total data of the day
-let lastIll = illness[illness.length-1];
-let lastDeath = deaths[deaths.length-1];
-let lastRecover = recovers[recovers.length-1];
-
-
+let lastIll = illness[illness.length-1],
+    lastDeath = deaths[deaths.length-1],
+    lastRecover = recovers[recovers.length-1];
 //diaplay the total data of the day
-const lastIllDisplay = document.querySelector(".data__display_ill");
-const lastDeathDisplay = document.querySelector(".data__display_dead");
-const lastRecoverDisplay = document.querySelector(".data__display_recover");
 lastIllDisplay.textContent = lastIll;
 lastDeathDisplay.textContent = lastDeath;
 lastRecoverDisplay.textContent = lastRecover;
 
 
 // the current data of the day
-let curIll = illness[illness.length-1] - illness[illness.length-2];
-let curDeath = deaths[deaths.length-1] - deaths[deaths.length-2];
-let curRecover = recovers[recovers.length-1] - recovers[recovers.length-2];
-
-
+let curIll = illness[illness.length-1] - illness[illness.length-2],
+    curDeath = deaths[deaths.length-1] - deaths[deaths.length-2],
+    curRecover = recovers[recovers.length-1] - recovers[recovers.length-2];
 //diaplay the current data of the day
-const curIllDisplay = document.querySelector(".data__common__ill");
-const curDeathDisplay = document.querySelector(".data__common__dead");
-const curRecoverDisplay = document.querySelector(".data__common__recover");
 curIllDisplay.textContent = curIll;
 curDeathDisplay.textContent = curDeath;
 curRecoverDisplay.textContent = curRecover;

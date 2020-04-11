@@ -40,11 +40,14 @@ body {
 }
 
 .content__left {
-  width: 39%;
+  width: 30%;
+  @include tablet {
+    height: 48vh;
+  }
 }
 
 .content__right {
-  width: 59%;
+  width: 68%;
 }
 
 .title {
