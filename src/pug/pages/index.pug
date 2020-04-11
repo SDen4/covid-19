@@ -19,25 +19,25 @@ html(lang='en')
             .data__day
             //-Сегодня 09 апреля 2020 г.
             .data__common
-              .data__common-title Общие данные за последний день
+              .data__common-title Текущие данные за последний день
               .data__common-info
-                .data__common__bottom.data__common__ill 100
-                .data__common__bottom.data__common__dead 100
-                .data__common__bottom.data__common__recover 100
+                .data__common__bottom.data__common__ill
+                .data__common__bottom.data__common__dead
+                .data__common__bottom.data__common__recover
             .data__detailed
               .data__detailed-title Общие данные за весь период
               label.data__row
                 input.data__input(type="checkbox")
                 .data__button(type="button") Заболело
-                .data__display 100
+                .data__display.data__display_ill
               label.data__row
                 input.data__input(type="checkbox")
                 .data__button(type="button") Умерло
-                .data__display 100
+                .data__display.data__display_dead
               label.data__row
                 input.data__input(type="checkbox")
                 .data__button(type="button") Выздоровело
-                .data__display 100
+                .data__display.data__display_recover
               .data__row
       section.content.content__right
         .data.graph
@@ -62,6 +62,7 @@ html(lang='en')
                     span#depth-value.value
         .data.graph_detailed
           .wrapper
+            .graph_detailed-notice Источники инофрмации: WHO, Яндекс
 
 
 
