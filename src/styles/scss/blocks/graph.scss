@@ -1,9 +1,15 @@
 .graph {
     height: 74%;
+    @include tablet {
+        height: 84%;
+    }
 }
 
 .graph_detailed {
     height: 24%;
+    @include tablet {
+        height: 15%;
+    }
 }
 
 .highcharts-figure {
@@ -14,6 +20,9 @@
     height: 500px;
     margin-bottom: 40px;
     border-radius: $borderRadius;
+    @include tablet {
+        margin-bottom: 10px;
+    }
 }
 
 #sliders td input[type=range] {
@@ -27,6 +36,19 @@
     background-color: $red;
     border-radius: $borderRadius;
     height: 15%;
+}
+
+.sliders_input {
+    width: 100px;
+    @include tablet {
+        width: 80px;
+    }
+    @include smartphone {
+        width: 46px;
+    }
+    @include phone {
+        width: 40px;
+    }
 }
 
 .wrapper_sliders {

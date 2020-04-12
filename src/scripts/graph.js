@@ -120,7 +120,7 @@ const allRadio = document.querySelector("#allRadio");
 const all = document.querySelector("#all");
 all.textContent = "Общий прирост";
 
-all.addEventListener('click', () => {
+all.addEventListener('click', (event) => {
     if(allRadio.checked) {
         all.textContent = "Общий прирост";
         textTitle = 'Распространение короновируса в России'

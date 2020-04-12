@@ -26,6 +26,7 @@ body {
   align-items: center;
   @include tablet {
     flex-direction: column;
+    height: 130vh;
   }
 }
 
@@ -33,29 +34,34 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 95vh;
-  @include tablet {
-    width: 98%;
-  }
+  height: 98%;
 }
 
 .content__left {
   width: 30%;
   @include tablet {
-    height: 48vh;
+    width: 98%;
+    height: 38%;
   }
 }
 
 .content__right {
   width: 68%;
+  @include tablet {
+    width: 98%;
+    height: 61%;
+  }
 }
 
 .title {
   width: 100%;
-  height: 32px;
+  height: 5%;
   text-align: center;
   border-radius: $borderRadius;
   background-color: $mainBGColor;
+  @include tablet {
+    height: 8%;
+  }
 }
 
 button {
