@@ -49,3 +49,16 @@
     border-radius: $borderRadius;
     flex-wrap: wrap;
 }
+
+.graph__link {
+    margin-right: 5px;
+}
+
+.signature {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    color: $red;
+    text-decoration: none;
+}

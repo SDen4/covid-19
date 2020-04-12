@@ -58,7 +58,13 @@ var chart = new Highcharts.Chart({
         }
     },
     credits: {
-        enabled: false
+        text: "SDen4",
+        href: "https://github.com/SDen4",
+        style: {
+            fontSize: "16px",
+            color: "#A53E3E"
+        }
+
     },
     colors: ['#D2691E', '#4B0082', '#008000'],
     title: {
