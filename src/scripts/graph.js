@@ -11,10 +11,13 @@ const lastIllDisplay = document.querySelector(".data__display_ill"),
 
 
 //arrays of data: illness, deaths and recovers
-let illness = [], deaths = [], recovers = [];
+let illness = [], deaths = [], recovers = [], dates = [];
 for (let item in ill) {
     illness.push(ill[item]);
+    dates.push(item); //dates for x-axis
 }
+console.log('dates :' + dates);
+
 for (let item in death) {
     deaths.push(death[item]);
 }
@@ -76,9 +79,7 @@ var chart = new Highcharts.Chart({
         }
     },
     xAxis: {
-        title: {
-            text: "Время"
-        }
+        categories: dates
     },
     subtitle: {
         text: 'Источники инофрмации: WHO, Яндекс'
