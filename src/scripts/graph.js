@@ -109,3 +109,46 @@ $('#sliders input').on('input change', function () {
 });
 
 showValues();
+
+
+
+
+//detailes data
+let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
+
+for(let j = 0; j < illness.length-1; j++ ) {
+     let delta;
+    if( j<= (illness.length-2) ) {delta = illness[j+1] - illness[j]; };
+    dynamicIllness.push(delta);
+};
+
+for(let j = 0; j < deaths.length-1; j++ ) {
+     let delta;
+    if( j<= (deaths.length-2) ) {delta = deaths[j+1] - deaths[j]; };
+    dynamicDeaths.push(delta);
+};
+
+for(let j = 0; j < recovers.length-1; j++ ) {
+     let delta;
+    if( j<= (recovers.length-2) ) {delta = recovers[j+1] - recovers[j]; };
+    dynamicRecovers.push(delta);
+};
+
+
+const allRadio = document.querySelector("#allRadio");
+const all = document.querySelector("#all");
+
+all.textContent = "Общий прирост";
+chart.series.data  = illness;
+
+all.addEventListener('click', () => {
+    if(allRadio.checked) {
+        all.textContent = "Общий прирост";
+        chart.series.data  = illness;
+        console.log(chart.series.data );
+    } else {
+        all.textContent = "Динамика прироста";
+        chart.series.data  = dynamicIllness;
+        console.log(chart.series.data );
+    }
+});
