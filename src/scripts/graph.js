@@ -2,12 +2,7 @@ import ill from "../json/ill.json";
 import death from "../json/dead.json";
 import recover from "../json/recover.json";
 
-const lastIllDisplay = document.querySelector(".data__display_ill"),
-      lastDeathDisplay = document.querySelector(".data__display_dead"),
-      lastRecoverDisplay = document.querySelector(".data__display_recover"),
-      curIllDisplay = document.querySelector(".data__common__ill"),
-      curDeathDisplay = document.querySelector(".data__common__dead"),
-      curRecoverDisplay = document.querySelector(".data__common__recover");
+let textTitle = 'Динамика распространения короновируса в России';
 
 
 //arrays of data: illness, deaths and recovers
@@ -16,34 +11,41 @@ for (let item in ill) {
     illness.push(ill[item]);
     dates.push(item); //dates for x-axis
 }
-console.log('dates :' + dates);
-
 for (let item in death) {
     deaths.push(death[item]);
-}
+};
 for (let item in recover) {
     recovers.push(recover[item]);
-}
+};
 
 
-// the total data of the day
-let lastIll = illness[illness.length-1],
-    lastDeath = deaths[deaths.length-1],
-    lastRecover = recovers[recovers.length-1];
-//diaplay the total data of the day
-lastIllDisplay.textContent = lastIll;
-lastDeathDisplay.textContent = lastDeath;
-lastRecoverDisplay.textContent = lastRecover;
 
 
-// the current data of the day
-let curIll = illness[illness.length-1] - illness[illness.length-2],
-    curDeath = deaths[deaths.length-1] - deaths[deaths.length-2],
-    curRecover = recovers[recovers.length-1] - recovers[recovers.length-2];
-//diaplay the current data of the day
-curIllDisplay.textContent = curIll;
-curDeathDisplay.textContent = curDeath;
-curRecoverDisplay.textContent = curRecover;
+//detailes data
+let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
+
+for(let j = 0; j < illness.length-1; j++ ) {
+     let delta;
+    if( j<= (illness.length-2) ) {delta = illness[j+1] - illness[j]; };
+    dynamicIllness.push(delta);
+};
+
+for(let j = 0; j < deaths.length-1; j++ ) {
+     let delta;
+    if( j<= (deaths.length-2) ) {delta = deaths[j+1] - deaths[j]; };
+    dynamicDeaths.push(delta);
+};
+
+for(let j = 0; j < recovers.length-1; j++ ) {
+     let delta;
+    if( j<= (recovers.length-2) ) {delta = recovers[j+1] - recovers[j]; };
+    dynamicRecovers.push(delta);
+};
+
+
+
+
+
 
 
 // Set up the chart
@@ -71,7 +73,7 @@ var chart = new Highcharts.Chart({
     },
     colors: ['#D2691E', '#4B0082', '#008000'],
     title: {
-        text: 'Динамика распространения короновируса в России'
+        text: textTitle
     },
     yAxis: {
         title: {
@@ -118,30 +120,7 @@ $('#sliders input').on('input change', function () {
 showValues();
 
 
-
-
-//detailes data
-let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
-
-for(let j = 0; j < illness.length-1; j++ ) {
-     let delta;
-    if( j<= (illness.length-2) ) {delta = illness[j+1] - illness[j]; };
-    dynamicIllness.push(delta);
-};
-
-for(let j = 0; j < deaths.length-1; j++ ) {
-     let delta;
-    if( j<= (deaths.length-2) ) {delta = deaths[j+1] - deaths[j]; };
-    dynamicDeaths.push(delta);
-};
-
-for(let j = 0; j < recovers.length-1; j++ ) {
-     let delta;
-    if( j<= (recovers.length-2) ) {delta = recovers[j+1] - recovers[j]; };
-    dynamicRecovers.push(delta);
-};
-
-
+//dynamic button
 const allRadio = document.querySelector("#allRadio");
 const all = document.querySelector("#all");
 
@@ -159,3 +138,8 @@ all.addEventListener('click', () => {
         console.log(chart.series.data );
     }
 });
+
+
+
+
+export {illness, deaths, recovers};
