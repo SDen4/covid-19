@@ -44,6 +44,10 @@ html(lang='en')
                 input.data__input(type="checkbox")
                 .data__button(type="button") Выздоровело
                 .data__display.data__display_recover
+              .data__detailed-title Модификаторы
+              label.data__row
+                input.data__input#allRadio(type="checkbox" name="detailed")
+                .data__button.data__button_detailed#all(type="button")
       section.content.content__right
         .data.graph
           .wrapper
@@ -67,14 +71,12 @@ html(lang='en')
                       input.sliders_input#depth(type='range', min='20', max='100', value='50')
                       span#depth-value.value
         .data.graph_detailed
-          .wrapper
-            label.data__row
-              input.data__input#allRadio(type="checkbox" name="detailed")
-              .data__button.data__button_detailed#all(type="button")
-            .graph_detailed-notice Источники инофрмации: 
+          .wrapper.wrapper_footer
+            .graph_detailed-notice Источники информации: 
               a.graph__link(href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports") WHO,
               a.graph__link(href="https://yandex.ru/web-maps/covid19?ll=41.775580%2C54.894027&z=3") Яндекс
-            a.signature(href="https://github.com/SDen4") SDen4
+            .graph_detailed-notice Разработано: 
+              a.signature(href="https://github.com/SDen4") SDen4
 
 
 

@@ -107,14 +107,14 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle) {
         $('#beta-value').html(chart.options.chart.options3d.beta);
         $('#depth-value').html(chart.options.chart.options3d.depth);
     }
-
+    
     // Activate the sliders
     $('#sliders input').on('input change', function () {
         chart.options.chart.options3d[this.id] = parseFloat(this.value);
         showValues();
         chart.redraw(false);
     });
-
+    
     showValues();
 };
 

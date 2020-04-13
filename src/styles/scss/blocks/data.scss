@@ -20,6 +20,11 @@
     height: 94%;
 }
 
+.wrapper_footer {
+    flex-direction: row;
+    align-items: center;
+}
+
 .data__day, .data__detailed-title {
     width: 100%;
     padding: 3px 10px;
@@ -85,18 +90,12 @@
     justify-content: flex-start;
     width: 100%;
     height: 75%;
-
     @include desktop {
         height: 65%;
     }
-
     @include tablet {
         height: 42%;
     }
-
-    // @include smartphone {
-    //     height: 50%;
-    // }
 }
 
 .data__detailed-title {
@@ -149,7 +148,7 @@
 }
 
 .data__button_detailed {
-    width: 40%;
+    width: 69%;
     @include smartphone {
         width: 50%;
     }

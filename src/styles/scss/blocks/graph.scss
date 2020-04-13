@@ -1,24 +1,32 @@
 .graph {
-    height: 74%;
+    height: 94%;
     @include tablet {
         height: 84%;
     }
 }
 
 .graph_detailed {
-    height: 24%;
+    height: 5%;
     @include tablet {
         height: 15%;
     }
 }
 
+.graph_detailed-notice {
+    display: flex;
+    flex-direction: row;
+}
+
 .highcharts-figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0;
+    height: 100%;
 }
 
 #container {
-    height: 500px;
-    margin-bottom: 40px;
+    height: 89%;
     border-radius: $borderRadius;
     @include tablet {
         margin-bottom: 10px;
@@ -35,7 +43,7 @@
     align-items: center;
     background-color: $red;
     border-radius: $borderRadius;
-    height: 15%;
+    height: 10%;
 }
 
 .sliders_input {
@@ -67,14 +75,12 @@
 }
 
 .graph__link {
-    margin-right: 5px;
+    margin: 0 5px;
 }
 
 .signature {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     font-size: 16px;
     color: $red;
     text-decoration: none;
+    margin-left: 10px;
 }
