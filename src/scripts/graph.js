@@ -2,7 +2,7 @@ import ill from "../json/ill.json";
 import death from "../json/dead.json";
 import recover from "../json/recover.json";
 
-let textTitle = 'Распространение короновируса в России';
+let textSubTitle = 'Общее количество';
 
 
 //arrays of data: illness, deaths and recovers
@@ -41,7 +41,7 @@ for(let j = 0; j < recovers.length-1; j++ ) {
 };
 
 // Set up the chart
-function chartFunction(dates, illness, deaths, recovers, textTitle) {
+function chartFunction(dates, illness, deaths, recovers, textSubTitle) {
     var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -65,13 +65,13 @@ function chartFunction(dates, illness, deaths, recovers, textTitle) {
         },
         colors: ['#D2691E', '#4B0082', '#008000'],
         title: {
-            text: textTitle,
+            text: 'Распространение короновируса в России',
             style: {
                 color: "#A53E3E"
             }
         },
         subtitle: {
-            text: 'Источники инофрмации: WHO, Яндекс',
+            text: textSubTitle,
             style: {
                 color: "#A53E3E"
             }
@@ -118,7 +118,7 @@ function chartFunction(dates, illness, deaths, recovers, textTitle) {
     showValues();
 };
 
-chartFunction(dates, illness, deaths, recovers, textTitle);
+chartFunction(dates, illness, deaths, recovers, textSubTitle);
 
 
 //dynamic button
@@ -129,12 +129,12 @@ all.textContent = "Общий прирост";
 all.addEventListener('click', () => {
     if(allRadio.checked) {
         all.textContent = "Общий прирост";
-        textTitle = 'Распространение короновируса в России'
-        chartFunction(dates, illness, deaths, recovers, textTitle);
+        textSubTitle = 'Общее количество'
+        chartFunction(dates, illness, deaths, recovers, textSubTitle);
     } else {
         all.textContent = "Динамика прироста";
-        textTitle = 'Динамика новых случаев'
-        chartFunction(dates, dynamicIllness, dynamicDeaths, dynamicRecovers, textTitle);
+        textSubTitle = 'Динамика новых случаев'
+        chartFunction(dates, dynamicIllness, dynamicDeaths, dynamicRecovers, textSubTitle);
     }
 });
 
