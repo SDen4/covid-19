@@ -1,6 +1,7 @@
 import ill from "../json/ill.json";
 import death from "../json/dead.json";
 import recover from "../json/recover.json";
+import prognosis1 from "./prognosis1";
 
 let textSubTitle = 'Общее количество';
 
@@ -19,12 +20,12 @@ for (let item in recover) {
 };
 
 
-//detailes data
+//dynamic
 let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
 
 for(let j = 0; j < illness.length-1; j++ ) {
      let delta;
-    if( j<= (illness.length-2) ) {delta = illness[j+1] - illness[j]; };
+    if( j<= (illness.length-2) && (illness[j+1] != 0)) { delta = illness[j+1] - illness[j]; };
     dynamicIllness.push(delta);
 };
 
@@ -40,8 +41,9 @@ for(let j = 0; j < recovers.length-1; j++ ) {
     dynamicRecovers.push(delta);
 };
 
+
 // Set up the chart
-function chartFunction(dates, illness, deaths, recovers, textSubTitle) {
+function chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1) {
     var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -49,9 +51,9 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle) {
             zoomType: "x",
             options3d: {
                 enabled: true,
-                alpha: 15,
+                alpha: 0,
                 beta: 0,
-                depth: 50,
+                depth: 70,
                 viewDistance: 25
             }
         },
@@ -63,7 +65,7 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle) {
                 color: "#A53E3E"
             }
         },
-        colors: ['#D2691E', '#4B0082', '#008000'],
+        colors: ['#D2691E', '#4B0082', '#008000', '#D3D3D3'],
         title: {
             text: 'Распространение короновируса в России',
             style: {
@@ -98,8 +100,10 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle) {
         },{
             name: "Выздоровело",
             data: recovers
+        },{
+            name: "Прогноз Голиковой от 13.04",
+            data: prognosis1
         }],
-        
     });
 
     function showValues() {
@@ -118,7 +122,7 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle) {
     showValues();
 };
 
-chartFunction(dates, illness, deaths, recovers, textSubTitle);
+chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1);
 
 
 //dynamic button
@@ -130,7 +134,7 @@ all.addEventListener('click', () => {
     if(allRadio.checked) {
         all.textContent = "Общий прирост";
         textSubTitle = 'Общее количество'
-        chartFunction(dates, illness, deaths, recovers, textSubTitle);
+        chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1);
     } else {
         all.textContent = "Динамика прироста";
         textSubTitle = 'Динамика новых случаев'
