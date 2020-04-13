@@ -94,9 +94,9 @@
         height: 42%;
     }
 
-    @include smartphone {
-        height: 50%;
-    }
+    // @include smartphone {
+    //     height: 50%;
+    // }
 }
 
 .data__detailed-title {
@@ -150,6 +150,9 @@
 
 .data__button_detailed {
     width: 40%;
+    @include smartphone {
+        width: 50%;
+    }
 }
 
 .data__display {

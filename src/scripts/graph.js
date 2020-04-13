@@ -50,7 +50,7 @@ function chartFunction(dates, illness, deaths, recovers, textTitle) {
             options3d: {
                 enabled: true,
                 alpha: 15,
-                beta: 15,
+                beta: 0,
                 depth: 50,
                 viewDistance: 25
             }
@@ -65,7 +65,16 @@ function chartFunction(dates, illness, deaths, recovers, textTitle) {
         },
         colors: ['#D2691E', '#4B0082', '#008000'],
         title: {
-            text: textTitle
+            text: textTitle,
+            style: {
+                color: "#A53E3E"
+            }
+        },
+        subtitle: {
+            text: 'Источники инофрмации: WHO, Яндекс',
+            style: {
+                color: "#A53E3E"
+            }
         },
         yAxis: {
             title: {
@@ -74,9 +83,6 @@ function chartFunction(dates, illness, deaths, recovers, textTitle) {
         },
         xAxis: {
             categories: dates
-        },
-        subtitle: {
-            text: 'Источники инофрмации: WHO, Яндекс'
         },
         plotOptions: {
             column: {

@@ -28,6 +28,9 @@ body {
     flex-direction: column;
     height: 130vh;
   }
+  @include smartphone {
+    height: 150vh;
+  }
 }
 
 .content {
