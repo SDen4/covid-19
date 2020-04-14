@@ -49,7 +49,12 @@ html(lang='en')
                 input.data__input#allRadio(type="checkbox" name="detailed")
                 .data__button.data__button_detailed#all(type="button")
               .data__detailed-title Прогнозы
-              
+              label.data__row
+                input.data__input#prognosis1(type="checkbox" name="detailed")
+                .data__button.data__button_detailed#all(type="button") Прогноз 1
+                  .data__modal
+                    span Татьяна Голикова 
+                    a(href="https://tass.ru/obschestvo/8231339" target="_blank") Ссылка на источник
       section.content.content__right
         .data.graph
           .wrapper
@@ -73,12 +78,15 @@ html(lang='en')
                       input.sliders_input#depth(type='range', min='20', max='100', value='50')
                       span#depth-value.value
         .data.graph_detailed
-          .wrapper.wrapper_footer
-            .graph_detailed-notice Источники информации: 
-              a.graph__link(href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports") WHO,
-              a.graph__link(href="https://yandex.ru/web-maps/covid19?ll=41.775580%2C54.894027&z=3") Яндекс
-            .graph_detailed-notice Разработано: 
-              a.signature(href="https://github.com/SDen4") SDen4
+          .wrapper
+            .graph_detailed-up
+              p Внимание! У автора сайта нет цели распространения недостоверной информации! Здесь представлена статистика заболеваемости короновирусом COVID-19, публикуемая в официальных источниках, а также прогнозы развития заболеваемости. Прогнозы являются лишь прогнозами! Они не влияют на реальное разпространение инфекции и не претентедуют на то, что именно по такому сценарию будет развиваться эпидемия!
+            .graph_detailed-bottom
+              .graph_detailed-notice Источники информации: 
+                a.graph__link(href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports") WHO,
+                a.graph__link(href="https://yandex.ru/web-maps/covid19?ll=41.775580%2C54.894027&z=3") Яндекс
+              .graph_detailed-notice Разработано: 
+                a.signature(href="https://github.com/SDen4") SDen4
 
 
 

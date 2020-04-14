@@ -1,20 +1,15 @@
 .graph {
-    height: 94%;
+    height: 83%;
     @include tablet {
         height: 84%;
     }
 }
 
 .graph_detailed {
-    height: 5%;
+    height: 16%;
     @include tablet {
         height: 15%;
     }
-}
-
-.graph_detailed-notice {
-    display: flex;
-    flex-direction: row;
 }
 
 .highcharts-figure {
@@ -72,6 +67,21 @@
     border: 1px solid $mainColor;
     border-radius: $borderRadius;
     flex-wrap: wrap;
+}
+
+.graph_detailed-up {
+    color: $red;
+    font-weight: bold;
+}
+
+.graph_detailed-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.graph_detailed-notice {
+    display: flex;
 }
 
 .graph__link {

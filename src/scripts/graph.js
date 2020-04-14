@@ -44,7 +44,7 @@ for(let j = 0; j < recovers.length-1; j++ ) {
 
 // Set up the chart
 function chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1) {
-    var chart = new Highcharts.Chart({
+    let chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
             type: 'column',
