@@ -186,4 +186,15 @@
         left: 0;
         background-color: transparent;
     }
+    &:before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -4px;
+        left: 10px;
+        background-color: inherit;
+    }
 }

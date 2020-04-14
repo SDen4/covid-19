@@ -101,7 +101,7 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis
             name: "Выздоровело",
             data: recovers
         },{
-            name: "Прогноз Голиковой от 13.04",
+            name: "Прогноз 1",
             data: prognosis1
         }],
     });
