@@ -50,17 +50,18 @@ html(lang='en')
                 .data__button.data__button_detailed#all(type="button")
               .data__detailed-title Прогнозы
               label.data__row
-                input.data__input#prognosis1(type="checkbox" name="detailed")
-                .data__button.data__button_detailed#all(type="button") Прогноз 1
+                input.data__input#prognosis1Check(type="checkbox" name="detailed")
+                .data__button.data__button_detailed#prognosis1Button(type="button") Прогноз 1
                   .data__modal
                     span Татьяна Голикова 
                     a(href="https://tass.ru/obschestvo/8231339" target="_blank") Ссылка на источник
       section.content.content__right
         .data.graph
-          .wrapper
+          .wrapper.wrapper_graph
             //-plugin Highcharts
             figure.highcharts-figure
               #container
+              .graph_detailed-up Чтобы изменить масштаб выделите на графике мышкой интересуемый диапазон
               #sliders
                 .wrapper.wrapper_sliders
                   p Настройки графика
@@ -78,9 +79,9 @@ html(lang='en')
                       input.sliders_input#depth(type='range', min='20', max='100', value='50')
                       span#depth-value.value
         .data.graph_detailed
-          .wrapper
+          .wrapper.wrapper_graph
             .graph_detailed-up
-              p Внимание! У автора сайта нет цели распространения недостоверной информации! Здесь представлена статистика заболеваемости короновирусом COVID-19, публикуемая в официальных источниках, а также прогнозы развития заболеваемости. Прогнозы являются лишь прогнозами! Они не влияют на реальное разпространение инфекции и не претентедуют на то, что именно по такому сценарию будет развиваться эпидемия!
+              p Внимание! У автора сайта нет цели распространения недостоверной информации! Здесь представлена статистика заболеваемости короновирусом COVID-19, публикуемая в официальных источниках, а также прогнозы развития заболеваемости. Прогнозы являются лишь прогнозами! Они не влияют на реальное раcпространение инфекции и не претентедуют на то, что именно по такому сценарию будет развиваться эпидемия!
             .graph_detailed-bottom
               .graph_detailed-notice Источники информации: 
                 a.graph__link(href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports") WHO,

@@ -7,11 +7,15 @@ let textSubTitle = 'Общее количество';
 
 
 //arrays of data: illness, deaths and recovers
-let illness = [], deaths = [], recovers = [], dates = [];
+let illness = [], deaths = [], recovers = [], dates = [], illnessClear = [];
 for (let item in ill) {
     illness.push(ill[item]);
     dates.push(item); //dates for x-axis
 }
+for (let item in ill) {
+    if (ill[item] == 0 || ill[item] == "") break;
+    illnessClear.push(ill[item]);
+};
 for (let item in death) {
     deaths.push(death[item]);
 };
@@ -42,8 +46,23 @@ for(let j = 0; j < recovers.length-1; j++ ) {
 };
 
 
+//display of prognosis 1
+let prognosis1Check = document.querySelector('#prognosis1Check'),
+    prognosis1Button = document.querySelector('#prognosis1Button'),
+    prognosis = "";
+
+prognosis1Button.addEventListener('click', () => {
+    if(prognosis1Check.checked) {
+        prognosis = "";
+        chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
+    } else {
+        chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1);
+    }
+});
+
+
 // Set up the chart
-function chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1) {
+function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, prognosis) {
     let chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -93,7 +112,7 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis
         },
         series: [{
             name: "Заболело",
-            data: illness
+            data: illnessData
         },{
             name: "Умерло",
             data: deaths
@@ -102,7 +121,7 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis
             data: recovers
         },{
             name: "Прогноз 1",
-            data: prognosis1
+            data: prognosis
         }],
     });
 
@@ -122,7 +141,7 @@ function chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis
     showValues();
 };
 
-chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1);
+chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
 
 
 //dynamic button
@@ -134,11 +153,11 @@ all.addEventListener('click', () => {
     if(allRadio.checked) {
         all.textContent = "Общий прирост";
         textSubTitle = 'Общее количество'
-        chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1);
+        chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
     } else {
         all.textContent = "Динамика прироста";
         textSubTitle = 'Динамика новых случаев'
-        chartFunction(dates, dynamicIllness, dynamicDeaths, dynamicRecovers, textSubTitle);
+        chartFunction(dates, dynamicIllness, dynamicDeaths, dynamicRecovers, textSubTitle, prognosis);
     }
 });
 

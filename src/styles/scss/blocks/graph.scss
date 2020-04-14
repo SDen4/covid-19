@@ -21,7 +21,7 @@
 }
 
 #container {
-    height: 89%;
+    height: 83%;
     border-radius: $borderRadius;
     @include tablet {
         margin-bottom: 10px;
@@ -48,10 +48,6 @@
     }
 }
 
-.wrapper_sliders {
-    justify-content: space-evenly;
-}
-
 .charts_body {
     display: flex;
     justify-content: space-between;
@@ -72,6 +68,7 @@
 .graph_detailed-up {
     color: $red;
     font-weight: bold;
+    text-align: center;
 }
 
 .graph_detailed-bottom {
