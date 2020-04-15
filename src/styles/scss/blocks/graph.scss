@@ -1,14 +1,20 @@
 .graph {
     height: 83%;
+    @include laptop {
+        height: 81%;
+    }
     @include tablet {
-        height: 84%;
+        height: 77%;
     }
 }
 
 .graph_detailed {
     height: 16%;
+    @include laptop {
+        height: 18%;
+    }
     @include tablet {
-        height: 15%;
+        height: 22%;
     }
 }
 
@@ -69,12 +75,18 @@
     color: $red;
     font-weight: bold;
     text-align: center;
+    @include desktop {
+        font-size: 14px;
+    }
 }
 
 .graph_detailed-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include tablet {
+        font-size: 14px;
+    }
 }
 
 .graph_detailed-notice {

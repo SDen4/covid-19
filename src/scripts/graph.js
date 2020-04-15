@@ -2,6 +2,8 @@ import ill from "../json/ill.json";
 import death from "../json/dead.json";
 import recover from "../json/recover.json";
 import prognosis1 from "./prognosis1";
+import prognosis2 from "./prognosis2";
+
 
 let textSubTitle = 'Общее количество';
 
@@ -46,23 +48,26 @@ for(let j = 0; j < recovers.length-1; j++ ) {
 };
 
 
-//display of prognosis 1
+//display of prognosis
 let prognosis1Check = document.querySelector('#prognosis1Check'),
     prognosis1Button = document.querySelector('#prognosis1Button'),
+    modal = document.querySelector('.data__modal'),
     prognosis = "";
 
 prognosis1Button.addEventListener('click', () => {
     if(prognosis1Check.checked) {
         prognosis = "";
-        chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
+        modal.style.display = "none";
+        chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis, prognosis);
     } else {
-        chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1);
+        modal.style.display = "flex";
+        chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1, prognosis2);
     }
 });
 
 
 // Set up the chart
-function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, prognosis) {
+function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, prognosisA, prognosisB) {
     let chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -84,7 +89,7 @@ function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, progn
                 color: "#A53E3E"
             }
         },
-        colors: ['#D2691E', '#4B0082', '#008000', '#D3D3D3'],
+        colors: ['#D2691E', '#4B0082', '#008000', '#D3D3D3', '#C0C0C0'],
         title: {
             text: 'Распространение короновируса в России',
             style: {
@@ -121,7 +126,10 @@ function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, progn
             data: recovers
         },{
             name: "Прогноз 1",
-            data: prognosis
+            data: prognosisA
+        },{
+            name: "Прогноз 2",
+            data: prognosisB
         }],
     });
 
