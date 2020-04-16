@@ -102,6 +102,9 @@ function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, progn
                 color: "#A53E3E"
             }
         },
+        tooltip: {
+            shared: true
+        },
         yAxis: {
             title: {
                 text: "Кол-во человек"
