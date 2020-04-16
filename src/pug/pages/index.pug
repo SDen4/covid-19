@@ -51,10 +51,15 @@ html(lang='en')
                 input.data__input#prognosis1Check(type="checkbox" name="detailed")
                 .data__button.data__button_detailed#prognosis1Button(type="button") Прогнозы
               .data__modal
-                span.data_prognosis Прогноз 1. Татьяна Голикова (вице-премьер)
-                a.data_prognosis(href="https://tass.ru/obschestvo/8231339" target="_blank") Ссылка на источник
-                span.data_prognosis Прогноз 2. Анна Попова (глава РосПотребНадзора)
-                a.data_prognosis(href="https://ria.ru/20200413/1569983282.html" target="_blank") Ссылка на источник
+                .data__modal-row
+                  span.data_prognosis Прогноз 1. Татьяна Голикова (вице-премьер)
+                  a.data_prognosis(href="https://tass.ru/obschestvo/8231339" target="_blank") Ссылка на источник
+                .data__modal-row
+                  span.data_prognosis Прогноз 2. Анна Попова (глава РосПотребНадзора)
+                  a.data_prognosis(href="https://ria.ru/20200413/1569983282.html" target="_blank") Ссылка на источник
+                .data__modal-row
+                  span.data_prognosis Прогноз 3. Автоh сайта
+                  a.data_prognosis(href="http://i.imgur.com/APTt5ur.png" target="_blank") Подробности
       section.content.content__right
         .data.graph
           .wrapper.wrapper_graph
