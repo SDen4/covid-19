@@ -10,7 +10,7 @@ html {
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 16px;
-  color: $mainColor;
+  color: $red;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -49,7 +49,7 @@ body {
 }
 
 .content__right {
-  width: 68%;
+  width: 69%;
   @include tablet {
     width: 98%;
     height: 59%;
