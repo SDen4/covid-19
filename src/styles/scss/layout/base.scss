@@ -27,10 +27,10 @@ body {
   @include tablet {
     flex-direction: column;
     justify-content: space-evenly;
+    width: 100%;
     height: 200vh;
   }
   @include smartphone {
-    width: 100%;
     height: 260vh;
   }
   @include phone {
@@ -62,9 +62,11 @@ body {
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 4%;
-  text-align: center;
   font-weight: bold;
   border-radius: $borderRadius;
   background-color: $mainBGColor;
@@ -84,8 +86,8 @@ body {
   @include desktop {
     height: 98%;
   }
-  @include smartphone {
-    width: 98%;
+  @include tablet {
+    width: 97%;
   }
 }
 

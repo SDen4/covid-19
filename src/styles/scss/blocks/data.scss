@@ -45,6 +45,7 @@
     width: 92%;
     margin:0 0 20px 10px;
     @include smartphone {
+        text-align: center;
         width: fit-content;
         margin: 0;
         margin-bottom: 10px;
@@ -59,6 +60,9 @@
     margin-bottom: 10px;
     @include desktop {
         flex-direction: column;
+    }
+    @include phone {
+        margin-bottom: 5px;
     }
 }
 
@@ -81,13 +85,14 @@
         }
     }
     @include smartphone {
+        margin-bottom: 5px;
         width: 100%;
     }
 }
 
 .data__common_subtitle {
     @include desktop {
-        min-width: 110px;
+        min-width: 115px;
         margin: 0 5%;
     }
     @include smartphone {
@@ -139,6 +144,8 @@
 }
 
 .data__row_common {
+    min-height: unset;
+    padding: 5px 0;
     border: 1px solid $red;
     border-radius: $borderRadius;
 }
@@ -159,7 +166,7 @@
     justify-content: flex-start;
     align-items: center;
     margin-left: 10px;
-    width: 69%;
+    width: 100%;
     height: 100%;
     border-radius: $borderRadius;
     font-size: 16px;
@@ -170,16 +177,12 @@
     justify-content: center;
     background-color: $red;
     color: $mainColor;
-    width: 69%;
     margin-left: 0;
     cursor: pointer;
     outline: none;
     transition: .5s;
     &:hover {
         background-color: $buttonHover;
-    }
-    @include desktop {
-        width: 100%;
     }
 }
 
