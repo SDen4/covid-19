@@ -6,6 +6,9 @@
     @include tablet {
         height: 77%;
     }
+    @include smartphone {
+        height: 72.5%;
+    }
 }
 
 .graph_detailed {
@@ -15,6 +18,9 @@
     }
     @include tablet {
         height: 22%;
+    }
+    @include smartphone {
+        height: 27%;
     }
 }
 
@@ -31,6 +37,51 @@
     border-radius: $borderRadius;
     @include tablet {
         margin-bottom: 10px;
+    }
+}
+
+.graph_detailed-up {
+    color: $red;
+    font-weight: bold;
+    text-align: center;
+    @include desktop {
+        font-size: 14px;
+    }
+}
+
+.graph_detailed-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+        font-size: 14px;
+    }
+    @include smartphone {
+        flex-direction: column;
+    }
+}
+
+.graph_detailed-notice {
+    display: flex;
+    @include smartphone {
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.graph__link {
+    margin: 0 5px;
+}
+
+.signature {
+    font-size: 16px;
+    color: $red;
+    text-decoration: none;
+    margin-left: 10px;
+    @include smartphone {
+        margin-left: 5px;
     }
 }
 
@@ -70,36 +121,3 @@
 //     border-radius: $borderRadius;
 //     flex-wrap: wrap;
 // }
-
-.graph_detailed-up {
-    color: $red;
-    font-weight: bold;
-    text-align: center;
-    @include desktop {
-        font-size: 14px;
-    }
-}
-
-.graph_detailed-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include tablet {
-        font-size: 14px;
-    }
-}
-
-.graph_detailed-notice {
-    display: flex;
-}
-
-.graph__link {
-    margin: 0 5px;
-}
-
-.signature {
-    font-size: 16px;
-    color: $red;
-    text-decoration: none;
-    margin-left: 10px;
-}

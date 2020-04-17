@@ -7,7 +7,7 @@
     width: 100%;
     height: 95%;
     @include tablet {
-        height: 94%;
+        height: 94.5%;
     }
 }
 
@@ -19,6 +19,9 @@
     font-weight: bold;
     @include tablet {
         margin-bottom: 5px;
+    }
+    @include smartphone {
+        text-align: center;
     }
 }
 
@@ -33,11 +36,19 @@
     width: 100%;
     border-radius: $borderRadius;
     font-weight: bold;
+    @include smartphone {
+        align-items: center;
+    }
 }
 
 .data__common-title {
     width: 92%;
     margin:0 0 20px 10px;
+    @include smartphone {
+        width: fit-content;
+        margin: 0;
+        margin-bottom: 10px;
+    }
 }
 
 .data__common-info {
@@ -69,12 +80,18 @@
             margin-bottom: 0;
         }
     }
+    @include smartphone {
+        width: 100%;
+    }
 }
 
 .data__common_subtitle {
     @include desktop {
         min-width: 110px;
         margin: 0 5%;
+    }
+    @include smartphone {
+        margin: 0 20px 0 10px;
     }
 }
 
@@ -92,6 +109,12 @@
     }
     @include tablet {
         height: 63%;
+    }
+    @include smartphone {
+        height: 64vh;
+    }
+    @include phone {
+        height: 90vh;
     }
 }
 
@@ -157,9 +180,6 @@
     }
     @include desktop {
         width: 100%;
-    }
-    @include smartphone {
-        width: 50%;
     }
 }
 
