@@ -16,40 +16,38 @@ html(lang='en')
         h1.title Covid-19 в России
         .data
           .wrapper
-            #data__day.data__detailed-title.data__detailed-title-day
+            #data__day.data__title.data__title-day
             .data__common
-              .data__common-title Текущие данные за последний день
-              .data__common-info
-                .data__common__bottom
-                  .data__common_subtitle Заболело
-                  .data__common__ill
-                .data__common__bottom
-                  .data__common_subtitle Умерло
-                  .data__common__dead
-                .data__common__bottom
-                  .data__common_subtitle Выздоровело
-                  .data__common__recover
+              .data__title Текущие данные за последний день
+              .data__common-info.data__common-info_up
+                .data__line.data__line_up
+                  .data__subtitle.data__subtitle_up Заболело
+                  .data__display.data__common__ill
+                .data__line.data__line_up
+                  .data__subtitle.data__subtitle_up Умерло
+                  .data__display.data__common__dead
+                .data__line.data__line_up
+                  .data__subtitle.data__subtitle_up Выздоровело
+                  .data__display.data__common__recover
             .data__detailed
-              .data__detailed-title Общие данные за весь период
-              label.data__row.data__row_common
-                input.data__input(type="checkbox")
-                .data__button(type="button") Заболело
-                .data__display.data__display_ill
-              label.data__row.data__row_common
-                input.data__input(type="checkbox")
-                .data__button(type="button") Умерло
-                .data__display.data__display_dead
-              label.data__row.data__row_common
-                input.data__input(type="checkbox")
-                .data__button(type="button") Выздоровело
-                .data__display.data__display_recover
-              .data__detailed-title Динамика новых случаев и прогнозы
+              .data__title Общие данные за весь период
+              .data__common-info
+                .data__line
+                  .data__subtitle Заболело
+                  .data__display.data__display_ill
+                .data__line
+                  .data__subtitle Умерло
+                  .data__display.data__display_dead
+                .data__line
+                  .data__subtitle Выздоровело
+                  .data__display.data__display_recover
+              .data__title Динамика новых случаев и прогнозы
               label.data__row
                 input.data__input#allRadio(type="checkbox" name="detailed")
-                .data__button.data__button_detailed#all(type="button")
+                .data__button#all(type="button")
               label.data__row
                 input.data__input#prognosis1Check(type="checkbox" name="detailed")
-                .data__button.data__button_detailed#prognosis1Button(type="button") Прогнозы
+                .data__button#prognosis1Button(type="button") Прогнозы
               .data__modal
                 .data__modal-row
                   span.data_prognosis Прогноз 1. Татьяна Голикова (вице-премьер)
@@ -59,7 +57,6 @@ html(lang='en')
                   a.data_prognosis(href="https://ria.ru/20200413/1569983282.html" target="_blank") Источник
                 .data__modal-row
                   span.data_prognosis Прогноз 3. Автор сайта
-                  //- a.data_prognosis(href="http://i.imgur.com/APTt5ur.png" target="_blank") Подробности
                   a.data_prognosis(href="prognosisAuthor.html" target="_blank") Подробности
       section.content.content__right
         .data.graph
