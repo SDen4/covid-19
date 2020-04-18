@@ -1,5 +1,6 @@
 const path = require("path");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const fs = require("fs");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -9,6 +10,10 @@ const PATHS = {
     dist: path.join(__dirname, '../dist'),
     assets: "assets/"
 }
+
+const PAGES_DIR = `${PATHS.src}/pug/pages/`;
+const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith('.pug'));
+
 
 module.exports = {
 
@@ -84,15 +89,20 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: `${PATHS.assets}css/[name].css`,
         }),
-        new HtmlWebpackPlugin ({
-            hash: false,
-            template: `${PATHS.src}/pug/pages/index.pug`,
-            filename: "./index.html"
-        }),
+        // new HtmlWebpackPlugin ({
+        //     hash: false,
+        //     template: `${PATHS.src}/pug/pages/index.pug`,
+        //     filename: "./index.html"
+        // }),
         new CopyWebpackPlugin([
             {from: `${PATHS.src}/images`, to: `${PATHS.assets}images`},
             {from: `${PATHS.src}/static`, to: ""}
 
-        ])
+        ]),
+
+        ...PAGES.map(page => new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/${page}`,
+            filename: `./${page.replace(/\.pug/,'.html')}`
+        }))
     ]
 }

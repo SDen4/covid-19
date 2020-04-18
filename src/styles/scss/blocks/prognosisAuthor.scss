@@ -1,0 +1,20 @@
+.author__title {
+    margin-bottom: 2%;
+}
+
+.author__subtitle {
+    margin-bottom: 4%;
+}
+
+.author__text {
+    margin-bottom: 6%;
+}
+
+.author__photos {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    @include tablet {
+        flex-direction: column;
+    }
+}
