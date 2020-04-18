@@ -92,20 +92,40 @@
 
 .data__display_ill, .data__display_dead,.data__display_recover {
     text-align: center;
+    @include desktop {
+        text-align: left;
+    }
 }
 
 .data__subtitle {
-    margin: 0 5%;
+    width: 115px;
+    margin: 0 5px 0 10px;
     @include desktop {
         min-width: 115px;
+    }
+    @include laptop {
+        margin: 0 2px 0 2px;
+    }
+    @include tablet {
+        margin: 0 10px;
     }
     @include smartphone {
         margin: 0 20px 0 10px;
     }
 }
 
-.data__subtitle_up {
-    width: 115px;
+.data__subtitle_common {
+    width: unset;
+    margin: 0;
+    @include desktop {
+        margin: 0 40px 0 10px;
+    }
+    @include laptop {
+        margin: 0 10px 0 2px;
+    }
+    @include tablet {
+        margin-right: 32%;
+    }
 }
 
 .data__detailed {
@@ -180,6 +200,13 @@
 
 .data__display {
     width: 60px;
+    margin-right: 10px;
+    @include laptop {
+        margin-right: 5px;
+    }
+    @include tablet {
+        margin-right: 10px;
+    }
 }
 
 .data__modal {

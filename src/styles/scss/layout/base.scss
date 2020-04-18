@@ -53,6 +53,9 @@ body {
 
 .content__left {
   width: 30%;
+  @include laptop {
+    width: 32%;
+  }
   @include tablet {
     width: 98%;
     height: 40%;
@@ -61,6 +64,9 @@ body {
 
 .content__right {
   width: 69%;
+  @include laptop {
+    width: 67%;
+  }
   @include tablet {
     width: 98%;
     height: 59.5%;
