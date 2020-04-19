@@ -22,14 +22,33 @@
   }
 }
 
+@mixin smartphoneAdd() {
+  @media screen and (max-width: $smartphoneAdd) {
+    @content;
+  }
+}
+
+
 @mixin phone() {
   @media screen and (max-width: $phone) {
     @content;
   }
 }
 
+@mixin tabletGrz() {
+  @media screen and (max-height: $tablet) {
+    @content;
+  }
+}
+
 @mixin smartphoneGrz() {
   @media screen and (max-height: $smartphone) {
+    @content;
+  }
+}
+
+@mixin phoneGrz() {
+  @media screen and (max-height: $phone) {
     @content;
   }
 }

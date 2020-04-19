@@ -148,6 +148,9 @@
     @include smartphone {
         height: 64vh;
     }
+    @include smartphoneAdd {
+        height: 73vh;
+    }
     @include phone {
         height: 90vh;
     }

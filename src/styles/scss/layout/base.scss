@@ -24,20 +24,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include desktop {
+    @include tabletGrz {
+      height: 119vh;
+    }
+  }
+  @include laptop {
+    @include smartphoneGrz {
+      height: 232vh;
+    }
+  }
   @include tablet {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
     height: 200vh;
+    @include smartphoneGrz {
+      height: 355vh;
+    }
+    @include phoneGrz {
+      height: 400vh;
+    }
   }
   @include smartphone {
     height: 260vh;
   }
+  @include smartphoneAdd {
+    height: 280vh;
+  }
   @include phone {
     height: 335vh;
-  }
-  @include smartphoneGrz {
-    height: 355vh;
   }
 }
 
@@ -58,13 +74,16 @@ body {
   width: 30%;
   @include laptop {
     width: 32%;
+    @include smartphoneGrz {
+      height: 100%;
+    }
   }
   @include tablet {
     width: 98%;
     height: 40%;
-  }
-  @include smartphoneGrz {
-    height: 54%;
+    @include smartphoneGrz {
+      height: 54%;
+    }
   }
 }
 
@@ -72,13 +91,16 @@ body {
   width: 69%;
   @include laptop {
     width: 67%;
+    @include smartphoneGrz {
+      height: 100%;
+    }
   }
   @include tablet {
     width: 98%;
     height: 59.5%;
-  }
-  @include smartphoneGrz {
-    height: 45%;
+    @include smartphoneGrz {
+      height: 45%;
+    }
   }
 }
 
