@@ -1,5 +1,6 @@
 // Прогноз вице-премьера Татьяны Голиковой о росте на 16% - 18% jn 13 апреля 2020 г.
 // https://tass.ru/obschestvo/8231339
+// http://i.imgur.com/qwLNZ2b.png
 
 
 //total ill people in Russia at the 13th of April 2020

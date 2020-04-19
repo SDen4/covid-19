@@ -11,10 +11,10 @@ let textSubTitle = 'Общее количество';
 
 //arrays of data: illness, deaths and recovers
 let illness = [], deaths = [], recovers = [], illnessClear = [];
+
 for (let item in ill) {
     illness.push(ill[item]);
 }
-
 for (let item in ill) {
     if (ill[item] == 0 || ill[item] == "") break;
     illnessClear.push(ill[item]);
@@ -31,22 +31,21 @@ for (let item in recover) {
 let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
 
 for(let j = 0; j < illness.length-1; j++ ) {
-     let delta;
+    let delta;
     if( j<= (illness.length-2) && (illness[j+1] != 0)) { delta = illness[j+1] - illness[j]; };
     dynamicIllness.push(delta);
 };
 
-for(let j = 0; j < deaths.length-1; j++ ) {
-     let delta;
-    if( j<= (deaths.length-2) ) {delta = deaths[j+1] - deaths[j]; };
-    dynamicDeaths.push(delta);
+function dynamicFunc(com, dyn) {
+    for(let j = 0; j < com.length-1; j++ ) {
+        let delta;
+        if( j<= (com.length-2) ) {delta = com[j+1] - com[j]; };
+        dyn.push(delta);
+    };
 };
 
-for(let j = 0; j < recovers.length-1; j++ ) {
-     let delta;
-    if( j<= (recovers.length-2) ) {delta = recovers[j+1] - recovers[j]; };
-    dynamicRecovers.push(delta);
-};
+dynamicFunc(deaths, dynamicDeaths);
+dynamicFunc(recovers, dynamicRecovers);
 
 
 //display of prognosis
@@ -61,6 +60,7 @@ prognosis1Button.addEventListener('click', () => {
         modal.style.display = "none";
         chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis, prognosis);
     } else {
+        if(allRadio.checked) all.click();
         modal.style.display = "flex";
         chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1, prognosis2, prognosis3Author);
     }
@@ -139,21 +139,6 @@ function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, progn
             data: prognosisC
         }],
     });
-
-    // function showValues() {
-    //     $('#alpha-value').html(chart.options.chart.options3d.alpha);
-    //     $('#beta-value').html(chart.options.chart.options3d.beta);
-    //     $('#depth-value').html(chart.options.chart.options3d.depth);
-    // }
-    
-    // // Activate the sliders
-    // $('#sliders input').on('input change', function () {
-    //     chart.options.chart.options3d[this.id] = parseFloat(this.value);
-    //     showValues();
-    //     chart.redraw(false);
-    // });
-    
-    // showValues();
 };
 
 chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
@@ -170,11 +155,11 @@ all.addEventListener('click', () => {
         textSubTitle = 'Общее количество'
         chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
     } else {
+        if(prognosis1Check.checked) prognosis1Button.click();
         all.textContent = "Динамика прироста";
         textSubTitle = 'Динамика новых случаев'
         chartFunction(dates, dynamicIllness, dynamicDeaths, dynamicRecovers, textSubTitle, prognosis);
     }
 });
-
 
 export {illness, deaths, recovers};
