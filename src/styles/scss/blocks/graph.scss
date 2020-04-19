@@ -9,6 +9,9 @@
     @include smartphone {
         height: 72.5%;
     }
+    @include smartphoneGrz {
+        height: 76%;
+      }
 }
 
 .graph_detailed {
@@ -22,6 +25,9 @@
     @include smartphone {
         height: 27%;
     }
+    @include smartphoneGrz {
+        height: 23%;
+      }
 }
 
 .highcharts-figure {
@@ -46,6 +52,9 @@
     text-align: center;
     @include desktop {
         font-size: 14px;
+    }
+    @include smartphoneGrz {
+        font-size: 12px;
     }
 }
 

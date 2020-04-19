@@ -36,6 +36,9 @@ body {
   @include phone {
     height: 335vh;
   }
+  @include smartphoneGrz {
+    height: 355vh;
+  }
 }
 
 .container_author {
@@ -60,6 +63,9 @@ body {
     width: 98%;
     height: 40%;
   }
+  @include smartphoneGrz {
+    height: 54%;
+  }
 }
 
 .content__right {
@@ -70,6 +76,9 @@ body {
   @include tablet {
     width: 98%;
     height: 59.5%;
+  }
+  @include smartphoneGrz {
+    height: 45%;
   }
 }
 

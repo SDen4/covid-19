@@ -151,6 +151,9 @@
     @include phone {
         height: 90vh;
     }
+    @include smartphoneGrz {
+        height: 70%;
+    }
 }
 
 .data__row {

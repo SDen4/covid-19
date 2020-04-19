@@ -27,3 +27,9 @@
     @content;
   }
 }
+
+@mixin smartphoneGrz() {
+  @media screen and (max-height: $smartphone) {
+    @content;
+  }
+}
