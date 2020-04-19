@@ -124,6 +124,7 @@
         margin: 0 10px 0 2px;
     }
     @include tablet {
+        margin-left: 10px;
         margin-right: 32%;
     }
 }
