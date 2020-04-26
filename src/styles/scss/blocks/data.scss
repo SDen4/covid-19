@@ -87,6 +87,7 @@
 .data__line_up {
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
     width: 100%;
 }
 
@@ -214,6 +215,22 @@
     @include tablet {
         margin-right: 10px;
     }
+    &:hover + .data__display-modal{
+        opacity: 1;
+    }
+}
+
+.data__display-modal {
+    position: absolute;
+    top: 4px;
+    right: 70px;
+    padding: 3px 5px;
+    border-radius: $borderRadius;
+    background-color: $mainColor;
+    color: $red;
+    font-size: 12px;
+    transition: .3s;
+    opacity: 0;
 }
 
 .data__modal {
