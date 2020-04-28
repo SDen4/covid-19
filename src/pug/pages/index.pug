@@ -12,8 +12,14 @@ html(lang='en')
     script(src='https://code.highcharts.com/modules/accessibility.js')
   body
     .container
+      .qr-code#qr-code
+        img(src='/assets/images/qr-code.jpg' alt='qr-code for mobiles')
       section.content.content__left
-        h1.title Covid-19 в России
+        .title
+          .qr-button#qr-button
+            .data__display-modal.data__display-modal_qr Смотреть на смартфоне
+            img(src='/assets/images/smartphone.png' alt='pic')
+          h1 Covid-19 в России
         .data
           .wrapper
             #data__day.data__title.data__title-day

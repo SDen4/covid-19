@@ -1,0 +1,43 @@
+.qr-code {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: $modalBlur;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: $borderRadius;
+    margin-right: 5px;
+    &:hover {
+        background-color: $mainColor;
+    }
+    &:hover .data__display-modal {
+        opacity: 1;
+    }
+    @include tablet {
+        display: none;
+    }
+    @include tabletGrz {
+        display: none;
+    }
+}
+
+.data__display-modal_qr {
+    width: max-content;
+    top: 29px;
+    left: 0px;
+}
