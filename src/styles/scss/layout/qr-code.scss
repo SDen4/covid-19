@@ -15,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     width: 26px;
     height: 26px;
     cursor: pointer;
@@ -25,7 +24,7 @@
     &:hover {
         background-color: $mainColor;
     }
-    &:hover .data__display-modal {
+    &:hover + .data__display-modal_qr {
         opacity: 1;
     }
     @include tablet {
@@ -38,6 +37,6 @@
 
 .data__display-modal_qr {
     width: max-content;
-    top: 29px;
-    left: 0px;
+    top: 36px;
+    left: 90px;
 }
