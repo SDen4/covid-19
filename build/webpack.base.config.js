@@ -27,7 +27,7 @@ module.exports = {
     output: {
         filename: `${PATHS.assets}js/[name].js`,
         path: PATHS.dist,
-        publicPath: ""
+        publicPath: "/"
     },
     module: {
         rules: [{
@@ -89,17 +89,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: `${PATHS.assets}css/[name].css`,
         }),
-        // new HtmlWebpackPlugin ({
-        //     hash: false,
-        //     template: `${PATHS.src}/pug/pages/index.pug`,
-        //     filename: "./index.html"
-        // }),
         new CopyWebpackPlugin([
             {from: `${PATHS.src}/images`, to: `${PATHS.assets}images`},
             {from: `${PATHS.src}/static`, to: ""}
-
         ]),
-
         ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
             filename: `./${page.replace(/\.pug/,'.html')}`
