@@ -7,4 +7,4 @@ $ cd covid-19
 $ npm i
 $ npm run dev
 ```
-# Watch on [github-pages](https://sden4.github.io/covid-19/dist)
+# Watch on [github-pages](https://sden4.github.io/covid-19/)
