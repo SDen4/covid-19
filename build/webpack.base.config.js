@@ -25,7 +25,7 @@ module.exports = {
     output: {
         filename: `${PATHS.assets}js/[name].js`,
         path: PATHS.dist,
-        publicPath: "/covid-19/"
+        publicPath: ""
     },
     module: {
         rules: [{
