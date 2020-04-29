@@ -16,7 +16,6 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith('.p
 
 
 module.exports = {
-
     externals: {
         paths: PATHS
     },
@@ -27,7 +26,7 @@ module.exports = {
     output: {
         filename: `${PATHS.assets}js/[name].js`,
         path: PATHS.dist,
-        publicPath: "/"
+        publicPath: ""
     },
     module: {
         rules: [{
