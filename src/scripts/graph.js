@@ -156,15 +156,18 @@ const all = document.querySelector("#all");
 all.textContent = "Общий прирост";
 
 all.addEventListener('click', () => {
+    let now;
     if(allRadio.checked) {
         all.textContent = "Общий прирост";
-        textSubTitle = 'Общее количество'
-        chartFunction(dates, illnessClear, deaths, recovers, nowIll, textSubTitle, prognosis);
+        textSubTitle = 'Общее количество';
+        now = nowIll;
+        chartFunction(dates, illnessClear, deaths, recovers, now, textSubTitle, prognosis);
     } else {
         if(prognosis1Check.checked) prognosis1Button.click();
         all.textContent = "Динамика прироста";
-        textSubTitle = 'Динамика новых случаев'
-        chartFunction(dates, dynamicIllness, dynamicDeaths, dynamicRecovers, textSubTitle, prognosis);
+        textSubTitle = 'Динамика новых случаев';
+        now = "";
+        chartFunction(dates, dynamicIllness, dynamicDeaths, dynamicRecovers, now, textSubTitle, prognosis);
     }
 });
 
