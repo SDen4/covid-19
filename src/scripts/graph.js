@@ -3,14 +3,13 @@ import death from "../json/dead.json";
 import recover from "../json/recover.json";
 import prognosis1 from "./prognosis1";
 import prognosis2 from "./prognosis2";
-import prognosis3Author from './prognosis3';
-import dates from '../json/dates.json';
+import prognosis3Author from "./prognosis3";
+import dates from "../json/dates.json";
 
 let textSubTitle = 'Общее количество';
 
-
 //arrays of data: illness, deaths and recovers
-let illness = [], deaths = [], recovers = [], illnessClear = [];
+let illness = [], deaths = [], recovers = [], illnessClear = [], nowIll = [];
 
 for (let item in ill) {
     illness.push(ill[item]);
@@ -24,6 +23,10 @@ for (let item in death) {
 };
 for (let item in recover) {
     recovers.push(recover[item]);
+};
+
+for (let i = 0; i < deaths.length; i++) {
+    nowIll.push(illness[i] - deaths[i] - recovers[i]);
 };
 
 
@@ -58,17 +61,17 @@ prognosis1Button.addEventListener('click', () => {
     if(prognosis1Check.checked) {
         prognosis = "";
         modal.style.display = "none";
-        chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis, prognosis);
+        chartFunction(dates, illnessClear, deaths, recovers, nowIll, textSubTitle, prognosis, prognosis);
     } else {
         if(allRadio.checked) all.click();
         modal.style.display = "flex";
-        chartFunction(dates, illness, deaths, recovers, textSubTitle, prognosis1, prognosis2, prognosis3Author);
+        chartFunction(dates, illness, deaths, recovers, nowIll, textSubTitle, prognosis1, prognosis2, prognosis3Author);
     }
 });
 
 
 // Set up the chart
-function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, prognosisA, prognosisB, prognosisC) {
+function chartFunction(dates, illnessData, deaths, recovers, nowIll, textSubTitle, prognosisA, prognosisB, prognosisC) {
     let chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -90,7 +93,7 @@ function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, progn
                 color: "#A53E3E"
             }
         },
-        colors: ['#D2691E', '#4B0082', '#008000', '#D3D3D3', '#C0C0C0', '#A9A9A9'],
+        colors: ['#D2691E', '#4B0082', '#008000', '#0000FF', '#D3D3D3', '#C0C0C0', '#A9A9A9'],
         title: {
             text: 'Распространение короновируса в России',
             style: {
@@ -129,6 +132,9 @@ function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, progn
             name: "Выздоровело",
             data: recovers
         },{
+            name: "Сейчас болеет",
+            data: nowIll
+        },{
             name: "Прогноз 1",
             data: prognosisA
         },{
@@ -141,7 +147,7 @@ function chartFunction(dates, illnessData, deaths, recovers, textSubTitle, progn
     });
 };
 
-chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
+chartFunction(dates, illnessClear, deaths, recovers, nowIll, textSubTitle, prognosis);
 
 
 //dynamic button
@@ -153,7 +159,7 @@ all.addEventListener('click', () => {
     if(allRadio.checked) {
         all.textContent = "Общий прирост";
         textSubTitle = 'Общее количество'
-        chartFunction(dates, illnessClear, deaths, recovers, textSubTitle, prognosis);
+        chartFunction(dates, illnessClear, deaths, recovers, nowIll, textSubTitle, prognosis);
     } else {
         if(prognosis1Check.checked) prognosis1Button.click();
         all.textContent = "Динамика прироста";
@@ -162,4 +168,4 @@ all.addEventListener('click', () => {
     }
 });
 
-export {illness, deaths, recovers};
+export {illness, deaths, recovers, nowIll};

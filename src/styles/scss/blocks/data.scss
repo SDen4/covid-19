@@ -17,6 +17,9 @@
     border-radius: $borderRadius;
     margin-bottom: 20px;
     font-weight: bold;
+    @include tabletGrz {
+        margin-bottom: 10px;
+    }
     @include tablet {
         margin-bottom: 5px;
     }
@@ -24,6 +27,12 @@
         text-align: center;
         margin: 0;
         margin-bottom: 10px;
+    }
+    @include smartphoneAdd {
+        margin-bottom: 4px;
+    }
+    @include phone {
+        margin-bottom: 2px;
     }
 }
 
@@ -79,8 +88,19 @@
             margin-bottom: 0;
         }
     }
+    @include tabletGrz {
+        margin-bottom: 5px;
+    }
+    @include tablet {
+        @include smartphoneGrz {
+            margin-bottom: 1px;
+        }
+    }
     @include smartphone {
         margin-bottom: 5px;
+    }
+    @include smartphoneAdd{
+        margin-bottom: 2px;
     }
 }
 
@@ -89,9 +109,12 @@
     justify-content: space-between;
     position: relative;
     width: 100%;
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
-.data__display_ill, .data__display_dead,.data__display_recover {
+#data__display_ill, #data__display_dead,#data__display_recover {
     text-align: center;
     @include desktop {
         text-align: left;
@@ -113,6 +136,10 @@
     @include smartphone {
         margin: 0 20px 0 10px;
     }
+}
+
+.data__subtitle_now-ill {
+    width: 135px;
 }
 
 .data__subtitle_common {

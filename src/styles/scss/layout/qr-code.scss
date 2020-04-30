@@ -20,12 +20,15 @@
     cursor: pointer;
     transition: .3s;
     border-radius: $borderRadius;
-    margin-right: 5px;
+    margin-right: 10px;
     &:hover {
         background-color: $mainColor;
     }
     &:hover + .data__display-modal_qr {
         opacity: 1;
+    }
+    @include laptop {
+        margin-right: 2px;
     }
     @include tablet {
         display: none;
