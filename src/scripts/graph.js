@@ -113,7 +113,7 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
                 color: "#A53E3E"
             }
         },
-        colors: ['#D2691E', '#0000FF', '#008000', '#4B0082', '#D3D3D3', '#C0C0C0', '#A9A9A9'],
+        colors: ['#D2691E', '#6495ED', '#228B22', '#4B0082', '#D3D3D3', '#C0C0C0', '#A9A9A9'],
         title: {
             text: 'Распространение короновируса в России',
             style: {
