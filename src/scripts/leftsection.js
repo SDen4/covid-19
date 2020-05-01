@@ -32,9 +32,9 @@ for(let i = 0; i<illness.length; i++) {
 };
 
 //diaplay the total data of the day
-commonIllDisplay.textContent = commonIll;
-commonDeathDisplay.textContent = commonDeath;
-commonRecoverDisplay.textContent = commonRecover;
+commonIllDisplay.textContent = commonIll.toLocaleString('ru-RU');
+commonDeathDisplay.textContent = commonDeath.toLocaleString('ru-RU');
+commonRecoverDisplay.textContent = commonRecover.toLocaleString('ru-RU');
 
 // the current data of the day
 let curDeath = deaths[deaths.length-1] - deaths[deaths.length-2],
@@ -42,10 +42,10 @@ let curDeath = deaths[deaths.length-1] - deaths[deaths.length-2],
     curNowIll = nowIll[nowIll.length-1];
 
 //diaplay the current data of the day
-curIllDisplay.textContent = curIll;
-curDeathDisplay.textContent = curDeath;
-curRecoverDisplay.textContent = curRecover;
-curNowIllDisplay.textContent = curNowIll;
+curIllDisplay.textContent = curIll.toLocaleString('ru-RU');
+curDeathDisplay.textContent = curDeath.toLocaleString('ru-RU');
+curRecoverDisplay.textContent = curRecover.toLocaleString('ru-RU');
+curNowIllDisplay.textContent = curNowIll.toLocaleString('ru-RU');
 
 //display the persent of new cases
 persentIll.textContent = `+${((curIll/preLastIll)*100).toFixed(1)}%`;
