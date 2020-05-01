@@ -12,11 +12,15 @@ html(lang='ru')
   body
     .container
       .qr-code#qr-code
-        img(src='/assets/images/qr-code.jpg' alt='qr-code for mobiles')
+        picture
+          source(srcset="/assets/images/qr-code.jpg" media="(min-width: 769px)")
+          img
       section.content.content__left
         .title
           .qr-button#qr-button
-            img(src="/assets/images/smartphone.png" alt='pic')
+            picture
+              source(srcset="/assets/images/smartphone.png" media="(min-width: 769px)")
+              img
           .data__display-modal.data__display-modal_qr Смотреть на смартфоне
           h1 Covid-19 в России
         .data
