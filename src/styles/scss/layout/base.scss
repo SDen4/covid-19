@@ -15,6 +15,11 @@ body {
   background-image: url('/assets/images/113.jpg');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include laptop {
+    @include smartphoneGrz {
+      background-image: none;
+    }
+  }
   @include tablet {
     background-image: none;
   }
