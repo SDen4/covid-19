@@ -130,6 +130,9 @@ body {
   @include desktop {
     height: 98%;
   }
+  @include laptop {
+    width: 98%;
+  }
   @include tablet {
     width: 97%;
   }

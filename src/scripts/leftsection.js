@@ -9,14 +9,18 @@ const commonIllDisplay = document.querySelector("#data__display_ill"),
       curNowIllDisplay = document.querySelector('#data__common_nowIll'),
       persentIll = document.querySelector("#data__persent_ill"),
       persentDead = document.querySelector("#data__persent_dead"),
-      persentRecover = document.querySelector("#data__persent_recover");
+      persentRecover = document.querySelector("#data__persent_recover"),
+      persentNowIll = document.querySelector("#data__persent_nowIll");
+
 
 // the total data of the day
 let commonIll, curIll, preLastIll,
     commonDeath = deaths[deaths.length-1],
     commonRecover = recovers[recovers.length-1],
     preLastDeath = deaths[deaths.length-2],
-    preLastRecover = recovers[recovers.length-2];
+    preLastRecover = recovers[recovers.length-2],
+    preLastNowIll = nowIll[nowIll.length-2];
+
 
 for(let i = 0; i<illness.length; i++) {
     if(illness[i] === 0 || illness[i] === undefined || illness[i] === "") {
@@ -47,3 +51,4 @@ curNowIllDisplay.textContent = curNowIll;
 persentIll.textContent = `+${((curIll/preLastIll)*100).toFixed(1)}%`;
 persentDead.textContent = `+${((curDeath/preLastDeath)*100).toFixed(1)}%`;
 persentRecover.textContent = `+${((curRecover/preLastRecover)*100).toFixed(1)}%`;
+persentNowIll.textContent = `+${((curNowIll/preLastNowIll-1)*100).toFixed(1)}%`;
