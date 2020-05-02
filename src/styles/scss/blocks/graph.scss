@@ -41,8 +41,13 @@
 #container {
     height: 95%;
     border-radius: $borderRadius;
+    @include laptop {
+        @include smartphoneGrz {
+            height: 100%;
+        }
+    }
     @include tablet {
-        margin-bottom: 10px;
+        height: 100%;
     }
 }
 
@@ -55,6 +60,17 @@
     }
     @include smartphoneGrz {
         font-size: 12px;
+    }
+}
+
+.graph_detailed-up_scale {
+    @include laptop {
+        @include smartphoneGrz {
+            display: none;
+        }
+    }
+    @include tablet {
+        display: none;
     }
 }
 
