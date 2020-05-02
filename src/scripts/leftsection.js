@@ -1,4 +1,4 @@
-import {illness, deaths, recovers, nowIll} from "./graph";
+import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
 
 const commonIllDisplay = document.querySelector("#data__display_ill"),
       commonDeathDisplay = document.querySelector("#data__display_dead"),
@@ -21,7 +21,7 @@ let commonIll, curIll, preLastIll,
     preLastRecover = recovers[recovers.length-2],
     preLastNowIll = nowIll[nowIll.length-2];
 
-
+//the current data of illness of last day
 for(let i = 0; i<illness.length; i++) {
     if(illness[i] === 0 || illness[i] === undefined || illness[i] === "") {
         commonIll = illness[i-1];

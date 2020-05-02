@@ -1,5 +1,5 @@
-import "./scripts/parser";
 import "./scripts/curdate";
+import "./scripts/statistic"
 import "./scripts/graph";
 import "./scripts/leftsection";
 import "./scripts/prognosis1";

@@ -1,5 +1,5 @@
 const qrCode = document.querySelector('#qr-code'),
-    qrButton = document.querySelector('#qr-button');
+      qrButton = document.querySelector('#qr-button');
 
 //open modal window
 qrButton.addEventListener('click', () => {

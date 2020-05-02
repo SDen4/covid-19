@@ -1,6 +1,5 @@
-import ill from "../json/ill.json";
-import death from "../json/dead.json";
-import recover from "../json/recover.json";
+import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
+
 import dates from "../json/dates.json";
 
 import prognosis1 from "./prognosis1";
@@ -9,57 +8,16 @@ import prognosis3Author from "./prognosis3";
 import prognosis4Sber from "./prognosis4";
 
 
-let textSubTitle = 'Общее количество';
-let typeOfChart = 'area';
-let opt3d = false;
-
-//arrays of data: illness, deaths, recovers and nowIll
-let illness = [], deaths = [], recovers = [], illnessClear = [], nowIll = [];
-
-for (let item in ill) {
-    illness.push(ill[item]);
-}
-for (let item in ill) {
-    if (ill[item] == 0 || ill[item] == "") break;
-    illnessClear.push(ill[item]);
-};
-for (let item in recover) {
-    recovers.push(recover[item]);
-};
-for (let item in death) {
-    deaths.push(death[item]);
-};
-for (let i = 0; i < deaths.length; i++) {
-    nowIll.push(illness[i] - deaths[i] - recovers[i]);
-};
-
-
-//dynamic
-let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
-
-for(let j = 0; j < illness.length-1; j++ ) {
-    let delta;
-    if( j<= (illness.length-2) && (illness[j+1] != 0)) { delta = illness[j+1] - illness[j]; };
-    dynamicIllness.push(delta);
-};
-
-function dynamicFunc(com, dyn) {
-    for(let j = 0; j < com.length-1; j++ ) {
-        let delta;
-        if( j<= (com.length-2) ) {delta = com[j+1] - com[j]; };
-        dyn.push(delta);
-    };
-};
-
-dynamicFunc(deaths, dynamicDeaths);
-dynamicFunc(recovers, dynamicRecovers);
+//type of graph and changed subtitle
+let textSubTitle = 'Общее количество',
+    typeOfChart = 'area',
+    opt3d = false;
 
 
 //display of prognosis
 let prognosis1Check = document.querySelector('#prognosis1Check'),
     prognosis1Button = document.querySelector('#prognosis1Button'),
-    modal = document.querySelector('.data__modal'),
-    prognosis = "";
+    modal = document.querySelector('.data__modal');
 
 prognosis1Button.addEventListener('click', () => {
     if(prognosis1Check.checked) {
@@ -175,6 +133,27 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
 chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle);
 
 
+//dynamic
+let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
+
+for(let j = 0; j < illness.length-1; j++ ) {
+    let delta;
+    if( j<= (illness.length-2) && (illness[j+1] != 0)) { delta = illness[j+1] - illness[j]; };
+    dynamicIllness.push(delta);
+};
+
+function dynamicFunc(com, dyn) {
+    for(let j = 0; j < com.length-1; j++ ) {
+        let delta;
+        if( j<= (com.length-2) ) {delta = com[j+1] - com[j]; };
+        dyn.push(delta);
+    };
+};
+
+dynamicFunc(deaths, dynamicDeaths);
+dynamicFunc(recovers, dynamicRecovers);
+
+
 //dynamic button
 const allRadio = document.querySelector("#allRadio");
 const all = document.querySelector("#all");
@@ -195,5 +174,3 @@ all.addEventListener('click', () => {
         chartFunction(typeOfChart, opt3d, dates, dynamicIllness, dynamicDeaths, dynamicRecovers, now, textSubTitle);
     }
 });
-
-export {illness, deaths, recovers, nowIll};
