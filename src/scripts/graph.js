@@ -1,10 +1,11 @@
 import ill from "../json/ill.json";
 import death from "../json/dead.json";
 import recover from "../json/recover.json";
+import dates from "../json/dates.json";
+
 import prognosis1 from "./prognosis1";
 import prognosis2 from "./prognosis2";
 import prognosis3Author from "./prognosis3";
-import dates from "../json/dates.json";
 
 let textSubTitle = 'Общее количество';
 let typeOfChart = 'area';
