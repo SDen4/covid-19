@@ -6,6 +6,8 @@ import dates from "../json/dates.json";
 import prognosis1 from "./prognosis1";
 import prognosis2 from "./prognosis2";
 import prognosis3Author from "./prognosis3";
+import prognosis4Sber from "./prognosis4";
+
 
 let textSubTitle = 'Общее количество';
 let typeOfChart = 'area';
@@ -61,25 +63,24 @@ let prognosis1Check = document.querySelector('#prognosis1Check'),
 
 prognosis1Button.addEventListener('click', () => {
     if(prognosis1Check.checked) {
-        prognosis = "";
         modal.style.display = "none";
         typeOfChart = 'area';
         opt3d = false;
         textSubTitle = 'Общее количество';
-        chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle, prognosis, prognosis);
+        chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle);
     } else {
         if(allRadio.checked) all.click();
         modal.style.display = "flex";
         typeOfChart = 'column';
         opt3d = true;
         textSubTitle = 'Прогнозы';
-        chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle, prognosis1, prognosis2, prognosis3Author);
+        chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle, prognosis1, prognosis2, prognosis3Author, prognosis4Sber);
     }
 });
 
 
 // Set up the chart
-function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers, nowIll, textSubTitle, prognosisA, prognosisB, prognosisC) {
+function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers, nowIll, textSubTitle, prognosisA, prognosisB, prognosisC, prognosisD) {
     let chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -114,7 +115,7 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
                 color: "#A53E3E"
             }
         },
-        colors: ['#D2691E', '#6495ED', '#228B22', '#4B0082', '#D3D3D3', '#C0C0C0', '#A9A9A9'],
+        colors: ['#D2691E', '#6495ED', '#228B22', '#4B0082', '#D3D3D3', '#C0C0C0', '#A9A9A9', '#808080'],
         title: {
             text: 'Распространение короновируса в России',
             style: {
@@ -164,11 +165,14 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
         },{
             name: "Прогноз 3",
             data: prognosisC
+        },{
+            name: "Прогноз 4",
+            data: prognosisD
         }],
     });
 };
 
-chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle, prognosis);
+chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle);
 
 
 //dynamic button
@@ -182,13 +186,13 @@ all.addEventListener('click', () => {
         all.textContent = "Общий прирост";
         textSubTitle = 'Общее количество';
         now = nowIll;
-        chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, now, textSubTitle, prognosis);
+        chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, now, textSubTitle);
     } else {
         if(prognosis1Check.checked) prognosis1Button.click();
         all.textContent = "Динамика прироста";
         textSubTitle = 'Динамика новых случаев';
         now = "";
-        chartFunction(typeOfChart, opt3d, dates, dynamicIllness, dynamicDeaths, dynamicRecovers, now, textSubTitle, prognosis);
+        chartFunction(typeOfChart, opt3d, dates, dynamicIllness, dynamicDeaths, dynamicRecovers, now, textSubTitle);
     }
 });
 
