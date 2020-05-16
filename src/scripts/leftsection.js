@@ -22,13 +22,10 @@ let commonIll, curIll, preLastIll,
     preLastNowIll = nowIll[nowIll.length-2];
 
 //the current data of illness of last day
-for(let i = 0; i<illness.length; i++) {
-    if(illness[i] === 0 || illness[i] === undefined || illness[i] === "") {
-        commonIll = illness[i-1];
-        preLastIll = illness[i-2];
-        curIll = commonIll - illness[i-2];
-        break;
-    }
+for(let i = 0; i<=illnessClear.length; i++) {
+    commonIll = illness[i-1];
+    preLastIll = illness[i-2];
+    curIll = commonIll - illness[i-2];
 };
 
 //diaplay the total data of the day
