@@ -122,7 +122,7 @@ body {
   height: 4%;
   font-weight: bold;
   border-radius: $borderRadius;
-  background-color: $mainBGColor;
+  background: $mainBGColor;
   color: $red;
   @include tablet {
     height: 5%;
