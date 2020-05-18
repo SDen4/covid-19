@@ -36,7 +36,6 @@ prognosis1Button.addEventListener('click', () => {
     }
 });
 
-console.log(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle, prognosis1, prognosis2, prognosis3Author, prognosis4Sber);
 
 // Set up the chart
 function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers, nowIll, textSubTitle, prognosisA, prognosisB, prognosisC, prognosisD) {
