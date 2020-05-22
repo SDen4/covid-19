@@ -1,4 +1,5 @@
 import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
+import dates from "../json/dates.json";
 
 const commonIllDisplay = document.querySelector("#data__display_ill"),
       commonDeathDisplay = document.querySelector("#data__display_dead"),
@@ -69,7 +70,7 @@ if(!isFinite(commonIll) || commonIll == "") {
     curNowIllDisplay.textContent = "?";
     persentNowIll.textContent = "?";
     persentNowIll.style.color = "#A53E3E";
-    throw new Error('Left section. Error at data (Common ill)');
+    throw new Error('Left section. Error in data (Common ill)');
 };
 
 if(curNowIll<0) {
@@ -96,9 +97,13 @@ if(!isFinite(commonRecover) || commonRecover == "") {
     throw new Error('Left section. Error in data (Common recover)');
 };
 
-if(commonIll-commonDeath-commonRecover != curNowIll) {
+if(commonIll-commonDeath-commonRecover !== curNowIll) {
     curNowIllDisplay.textContent = "?";
     persentNowIll.textContent = "?";
     persentNowIll.style.color = "#A53E3E";
     throw new Error('Left section. Error in calculation nowill! (check the current data of all parts: dead, recover and ill)');
-}
+};
+
+if(dates.length<illnessClear.length) {
+    throw new Error('Left section. Error in dates array length!');
+};

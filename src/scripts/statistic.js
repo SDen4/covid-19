@@ -8,7 +8,7 @@ let illness = [], deaths = [], recovers = [], illnessClear = [], nowIll = [];
 
 for (let item in ill) {
     illness.push(ill[item]);
-}
+};
 for (let item in ill) {
     if (ill[item] == 0 || ill[item] == "") break;
     illnessClear.push(ill[item]);
