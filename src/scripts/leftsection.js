@@ -57,3 +57,48 @@ if (curNowIll>preLastNowIll) {
     persentNowIll.textContent = `${((curNowIll/preLastNowIll-1)*100).toFixed(1)}%`;
     persentNowIll.style.color = "#228B22";
 };
+
+
+
+
+//test
+if(!isFinite(commonIll) || commonIll == "") {
+    commonIllDisplay.textContent = "?";
+    curIllDisplay.textContent = "?";
+    persentIll.textContent = "?";
+    curNowIllDisplay.textContent = "?";
+    persentNowIll.textContent = "?";
+    persentNowIll.style.color = "#A53E3E";
+    throw new Error('Error at data (Common ill)');
+};
+
+if(curNowIll<0) {
+    curNowIllDisplay.textContent = "?";
+    persentNowIll.textContent = "?";
+    throw new Error('Error in calculation! (nowill)');
+};
+
+if(!isFinite(commonDeath) || commonDeath == "") {
+    curDeathDisplay.textContent = "?";
+    persentDead.textContent = "?";
+    commonDeathDisplay.textContent = "?";
+    curNowIllDisplay.textContent = "?";
+    persentNowIll.textContent = "?";
+    throw new Error('Error at data (Common death)');
+};
+
+if(!isFinite(commonRecover) || commonRecover == "") {
+    curRecoverDisplay.textContent = "?";
+    persentRecover.textContent = "?";
+    commonRecoverDisplay.textContent = "?";
+    curNowIllDisplay.textContent = "?";
+    persentNowIll.textContent = "?";
+    throw new Error('Error at data (Common recover)');
+};
+
+if(commonIll-commonDeath-commonRecover != curNowIll) {
+    curNowIllDisplay.textContent = "?";
+    persentNowIll.textContent = "?";
+    persentNowIll.style.color = "#A53E3E";
+    throw new Error('Error at calculation nowill!');
+}
