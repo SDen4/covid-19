@@ -69,13 +69,13 @@ if(!isFinite(commonIll) || commonIll == "") {
     curNowIllDisplay.textContent = "?";
     persentNowIll.textContent = "?";
     persentNowIll.style.color = "#A53E3E";
-    throw new Error('Error at data (Common ill)');
+    throw new Error('Left section. Error at data (Common ill)');
 };
 
 if(curNowIll<0) {
     curNowIllDisplay.textContent = "?";
     persentNowIll.textContent = "?";
-    throw new Error('Error in calculation! (nowill)');
+    throw new Error('Left section. Error in calculation! (nowill)');
 };
 
 if(!isFinite(commonDeath) || commonDeath == "") {
@@ -84,7 +84,7 @@ if(!isFinite(commonDeath) || commonDeath == "") {
     commonDeathDisplay.textContent = "?";
     curNowIllDisplay.textContent = "?";
     persentNowIll.textContent = "?";
-    throw new Error('Error at data (Common death)');
+    throw new Error('Left section. Error in data (Common death)');
 };
 
 if(!isFinite(commonRecover) || commonRecover == "") {
@@ -93,12 +93,12 @@ if(!isFinite(commonRecover) || commonRecover == "") {
     commonRecoverDisplay.textContent = "?";
     curNowIllDisplay.textContent = "?";
     persentNowIll.textContent = "?";
-    throw new Error('Error at data (Common recover)');
+    throw new Error('Left section. Error in data (Common recover)');
 };
 
 if(commonIll-commonDeath-commonRecover != curNowIll) {
     curNowIllDisplay.textContent = "?";
     persentNowIll.textContent = "?";
     persentNowIll.style.color = "#A53E3E";
-    throw new Error('Error at calculation nowill!');
+    throw new Error('Left section. Error in calculation nowill! (check the current data of all parts: dead, recover and ill)');
 }
