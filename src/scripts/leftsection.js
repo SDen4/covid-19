@@ -60,9 +60,7 @@ if (curNowIll>preLastNowIll) {
 };
 
 
-
-
-//test
+//test & control errors
 if(!isFinite(commonIll) || commonIll == "") {
     commonIllDisplay.textContent = "?";
     curIllDisplay.textContent = "?";
@@ -115,4 +113,4 @@ if(curIll<0) {
     persentNowIll.textContent = "?";
     persentNowIll.style.color = "#A53E3E";
     throw new Error('Left section. Error: curIll can not be less than zero!');
-}
+};
