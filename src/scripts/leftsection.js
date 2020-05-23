@@ -1,5 +1,5 @@
 import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
-import dates from "../json/dates.json";
+import dates from "./date";
 
 const commonIllDisplay = document.querySelector("#data__display_ill"),
       commonDeathDisplay = document.querySelector("#data__display_dead"),

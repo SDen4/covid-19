@@ -19,7 +19,7 @@ for (let item in recover) {
 for (let item in death) {
     deaths.push(death[item]);
 };
-for (let i = 0; i < deaths.length; i++) {
+for (let i = 0; i < illnessClear.length; i++) {
     nowIll.push(illness[i] - deaths[i] - recovers[i]);
 };
 

@@ -1,4 +1,5 @@
 import "./scripts/curdate";
+import "./scripts/date";
 import "./scripts/statistic"
 import "./scripts/graph";
 import "./scripts/leftsection";

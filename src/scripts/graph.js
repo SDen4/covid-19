@@ -1,6 +1,5 @@
 import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
-
-import dates from "../json/dates.json";
+import dates from "./date";
 
 import prognosis1 from "./prognosis1";
 import prognosis2 from "./prognosis2";
