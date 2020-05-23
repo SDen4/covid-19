@@ -107,3 +107,12 @@ if(commonIll-commonDeath-commonRecover !== curNowIll) {
 if(dates.length<illnessClear.length) {
     throw new Error('Left section. Error in dates array length!');
 };
+
+if(curIll<0) {
+    curIllDisplay.textContent = "?";
+    persentIll.textContent = "?";
+    curNowIllDisplay.textContent = "?";
+    persentNowIll.textContent = "?";
+    persentNowIll.style.color = "#A53E3E";
+    throw new Error('Left section. Error: curIll can not be less than zero!');
+}
