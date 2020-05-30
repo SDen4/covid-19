@@ -51,14 +51,16 @@ persentDead.textContent = `+${((curDeath/preLastDeath)*100).toFixed(1)}%`;
 persentRecover.textContent = `+${((curRecover/preLastRecover)*100).toFixed(1)}%`;
 
 //display the persent of new cases(quantity of current ill people)
-if (curNowIll>preLastNowIll) {
+if( (curNowIll > preLastNowIll) && ( (curNowIll/preLastNowIll-1)*100 < 0.1) ){
+    persentNowIll.textContent = `${((curNowIll/preLastNowIll-1)*100).toFixed(1)}%`;
+    persentNowIll.style.color = "#A53E3E";
+}else if(curNowIll > preLastNowIll) {
     persentNowIll.textContent = `+${((curNowIll/preLastNowIll-1)*100).toFixed(1)}%`;
     persentNowIll.style.color = "#A53E3E";
 }else{
     persentNowIll.textContent = `${((curNowIll/preLastNowIll-1)*100).toFixed(1)}%`;
     persentNowIll.style.color = "#228B22";
 };
-
 
 //test & control errors
 if(!isFinite(commonIll) || commonIll == "") {
