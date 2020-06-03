@@ -62,6 +62,7 @@ if( (curNowIll > preLastNowIll) && ( (curNowIll/preLastNowIll-1)*100 < 0.1) ){
     persentNowIll.style.color = "#228B22";
 };
 
+
 //test & control errors
 if(!isFinite(commonIll) || commonIll == "") {
     commonIllDisplay.textContent = "?";
