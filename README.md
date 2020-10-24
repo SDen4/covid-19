@@ -8,4 +8,5 @@ $ cd covid-19
 $ npm i
 $ npm run dev
 ```
-## Watch on [github-pages](https://sden4.github.io/covid-19/)
+## Watch [api demo version](https://skriabin.site/)
+<!-- ## Watch on [github-pages](https://sden4.github.io/covid-19/) -->
