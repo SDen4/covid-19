@@ -1,8 +1,8 @@
 const url = 'https://api.covid19api.com/country/russia/status/';
 let illness = [], deaths = [], recovers = [], dates = [], nowIll = [];
 
-//get information about ills, deaths and recovers
-async function getData(form) {
+//get information about ills, deaths, recovers and separating dates array
+async function getData(form, dates) {
     let response = await fetch(url+form);
     if (response.ok) {
         let json = await response.json();
@@ -10,27 +10,14 @@ async function getData(form) {
 
         //create new arrays of data
         json.map(res => {
-            let dayValue = res.Cases;
-            arr.push(dayValue);
+            if(dates === 'dates') {
+                let dayValue = res.Date;
+                arr.push(dayValue.slice(0, 10));
+            } else {
+                let dayValue = res.Cases;
+                arr.push(dayValue);
+            }
         })
-        return arr;
-    } else {
-        console.log('Ошибка HTTP: ' + response.status);
-    };
-};
-
-//get dates
-async function getArrayOfDates() {
-    let response = await fetch(url+'deaths');
-    if (response.ok) {
-        let json = await response.json();
-        let arr = []; // new array of data
-
-        //create new array of dates
-        json.map(res => {
-            let dayValue = res.Date;
-            arr.push(dayValue.slice(0, 10));
-        });
         return arr;
     } else {
         console.log('Ошибка HTTP: ' + response.status);
@@ -39,7 +26,8 @@ async function getArrayOfDates() {
 
 //run getting all the data & calculate nowill
 async function pr() {
-    dates = await getArrayOfDates();
+    // dates = await getArrayOfDates();
+    dates = await getData('deaths', 'dates');
     console.log(dates);
     illness = await getData('confirmed');
     console.log(illness);
