@@ -6,7 +6,7 @@ import {illness, deaths, recovers, nowIll} from './getInfo';
 
 setTimeout(() => {
     leftSection();
-}, 900);
+}, 1500);
 
 function leftSection() {
 

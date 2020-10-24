@@ -7,9 +7,20 @@ import prognosis3Author from "./prognosis3";
 import prognosis4Sber from "./prognosis4";
 import {illness, deaths, recovers, nowIll, dates} from './getInfo';
 
+let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
+
 setTimeout(() => {
     chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle);
-}, 900);
+
+    dynamicFunc(illness, dynamicIllness);
+    dynamicFunc(deaths, dynamicDeaths);
+    dynamicFunc(recovers, dynamicRecovers);
+
+    console.log(dynamicIllness);
+    console.log(dynamicDeaths);
+    console.log(dynamicRecovers);
+
+}, 1500);
 
 //type of graph and changed subtitle
 let textSubTitle = 'Общее количество',
@@ -133,27 +144,15 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
 
 // chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle);
 
-
-//dynamic
-let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
-
-for(let j = 0; j < illness.length-1; j++ ) {
-    let delta;
-    if( j<= (illness.length-2) && (illness[j+1] != 0)) { delta = illness[j+1] - illness[j]; };
-    dynamicIllness.push(delta);
-};
-
 function dynamicFunc(com, dyn) {
     for(let j = 0; j < com.length-1; j++ ) {
         let delta;
-        if( j<= (com.length-2) ) {delta = com[j+1] - com[j]; };
+        if( j<= (com.length-2) ) {
+            delta = com[j+1] - com[j];
+        };
         dyn.push(delta);
     };
 };
-
-dynamicFunc(deaths, dynamicDeaths);
-dynamicFunc(recovers, dynamicRecovers);
-
 
 //dynamic button
 const allRadio = document.querySelector("#allRadio");
