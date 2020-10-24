@@ -13,13 +13,13 @@ html(lang='ru')
     .container
       .qr-code#qr-code
         picture
-          source(srcset="/assets/images/qr-code.jpg" media="(min-width: 769px) and (min-height: 769px)")
+          source(srcset='/assets/images/qr-code.jpg' media='(min-width: 769px) and (min-height: 769px)')
           img
       section.content.content__left
         .title
           .qr-button#qr-button
             picture
-              source(srcset="/assets/images/smartphone.png" media="(min-width: 769px) and (min-height: 769px)")
+              source(srcset='/assets/images/smartphone.png' media='(min-width: 769px) and (min-height: 769px)')
               img
           .data__display-modal.data__display-modal_qr Смотреть на смартфоне
           h1 Covid-19 в России
@@ -63,22 +63,22 @@ html(lang='ru')
                   .data__display#data__display_recover
               .data__title Динамика новых случаев и прогнозы
               label.data__row
-                input.data__input#allRadio(type="checkbox" name="detailed")
-                .data__button#all(type="button")
+                input.data__input#allRadio(type='checkbox' name='detailed')
+                .data__button#all(type='button')
               label.data__row
-                input.data__input#prognosis1Check(type="checkbox" name="detailed")
-                .data__button#prognosis1Button(type="button") Прогнозы
+                input.data__input#prognosis1Check(type='checkbox' name='detailed')
+                .data__button#prognosis1Button(type='button') Прогнозы
               .data__modal
                 .data__modal-row
-                  a.data_prognosis(href="https://tass.ru/obschestvo/8231339" target="_blank") Прогноз 1. Татьяна Голикова (вице-премьер)
+                  a.data_prognosis(href='https://tass.ru/obschestvo/8231339' target='_blank') Прогноз 1. Татьяна Голикова (вице-премьер)
                 .data__modal-row
-                  a.data_prognosis(href="https://ria.ru/20200413/1569983282.html" target="_blank") Прогноз 2. Анна Попова (глава РосПотребНадзора)
+                  a.data_prognosis(href='https://ria.ru/20200413/1569983282.html' target='_blank') Прогноз 2. Анна Попова (глава РосПотребНадзора)
                 .data__modal-row
-                  a.data_prognosis(href="prognosisAuthor.html" target="_blank") Прогноз 3. Автор сайта
+                  a.data_prognosis(href='prognosisAuthor.html' target='_blank') Прогноз 3. Автор сайта
                 .data__modal-row
-                  a.data_prognosis(href="https://www.sberindex.ru/#model" target="_blank") Прогноз 4. Сбербанк
+                  a.data_prognosis(href='https://www.sberindex.ru/#model' target='_blank') Прогноз 4. Сбербанк
                 .data__modal-row
-                  a.data_prognosis(href="authorthanks.html" target="_blank") Поблагодарить автора
+                  a.data_prognosis(href='authorthanks.html' target='_blank') Поблагодарить автора
       section.content.content__right
         .data.graph
           .wrapper.wrapper_graph
@@ -92,7 +92,7 @@ html(lang='ru')
               p Внимание! У автора сайта нет цели распространения недостоверной информации! Здесь представлена статистика заболеваемости короновирусом COVID-19, публикуемая в официальных источниках, а также прогнозы развития заболеваемости. Прогнозы не влияют на реальное раcпространение инфекции и не претентедуют на то, что именно по такому сценарию будет развиваться эпидемия!
             .graph_detailed-bottom
               .graph_detailed-notice Источники информации: 
-                a.graph__link(href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports") WHO,
-                a.graph__link(href="https://yandex.ru/web-maps/covid19?ll=41.775580%2C54.894027&z=3") Яндекс
+                a.graph__link(href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports') WHO,
+                a.graph__link(href='https://yandex.ru/web-maps/covid19?ll=41.775580%2C54.894027&z=3') Яндекс
               .graph_detailed-notice Разработано:
-                a.signature(href="https://github.com/SDen4") SDen4
+                a.signature(href='https://github.com/SDen4') SDen4

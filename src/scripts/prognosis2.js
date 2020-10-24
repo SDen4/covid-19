@@ -17,7 +17,7 @@ const start = 83;
 let prognosis2 = [];
 
 for (let j = 0; j<start-1; j++) {
-    prognosis2.push("");
+    prognosis2.push('');
 };
 
 prognosis2[start-1] = numOfIll;
