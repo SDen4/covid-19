@@ -10,7 +10,7 @@
 import prognosis3 from "../json/prognosis3.json";
 
 let prognosis3Author = [];
-let start = 43;
+let start = 86;
 
 for(let i = 0; i<start; i++) {
     prognosis3Author.push("");

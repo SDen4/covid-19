@@ -2,7 +2,7 @@
 import prognosis4 from "../json/prognosis4.json";
 
 let prognosis4Sber = []; //the new array for graph
-let start4Sber = 29; // the quantity of days since begining of data to the first day of this prognosis
+let start4Sber = 72; // the quantity of days since begining of data to the first day of this prognosis
 let currentIllOf2April = 3548; //official quantity of ill people of the 2nd of April - 
 //the day before first day of this prognosis
 

@@ -1,17 +1,20 @@
-import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
-import dates from "./date";
-
+// import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
+// import {illness, deaths, recovers, illnessClear, nowIll, dates} from "./getInfo";
+// import dates from "./date";
 import prognosis1 from "./prognosis1";
 import prognosis2 from "./prognosis2";
 import prognosis3Author from "./prognosis3";
 import prognosis4Sber from "./prognosis4";
+import {illness, deaths, recovers, nowIll, dates} from './getInfo';
 
+setTimeout(() => {
+    chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle);
+}, 900);
 
 //type of graph and changed subtitle
 let textSubTitle = 'Общее количество',
     typeOfChart = 'area',
     opt3d = false;
-
 
 //display of prognosis
 let prognosis1Check = document.querySelector('#prognosis1Check'),
@@ -24,17 +27,16 @@ prognosis1Button.addEventListener('click', () => {
         typeOfChart = 'area';
         opt3d = false;
         textSubTitle = 'Общее количество';
-        chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle);
+        chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle);
     } else {
         if(allRadio.checked) all.click();
         modal.style.display = "flex";
         typeOfChart = 'column';
         opt3d = true;
         textSubTitle = 'Прогнозы';
-        chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle, prognosis1, prognosis2, prognosis3Author, prognosis4Sber);
+        chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle, prognosis1, prognosis2, prognosis3Author, prognosis4Sber);
     }
 });
-
 
 // Set up the chart
 function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers, nowIll, textSubTitle, prognosisA, prognosisB, prognosisC, prognosisD) {
@@ -129,7 +131,7 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
     });
 };
 
-chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, nowIll, textSubTitle);
+// chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle);
 
 
 //dynamic
@@ -164,7 +166,7 @@ all.addEventListener('click', () => {
         all.textContent = "Общий прирост";
         textSubTitle = 'Общее количество';
         now = nowIll;
-        chartFunction(typeOfChart, opt3d, dates, illnessClear, deaths, recovers, now, textSubTitle);
+        chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, now, textSubTitle);
     } else {
         if(prognosis1Check.checked) prognosis1Button.click();
         all.textContent = "Динамика прироста";

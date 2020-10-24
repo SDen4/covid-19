@@ -1,5 +1,14 @@
-import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
-import dates from "./date";
+// import {illness, deaths, recovers, illnessClear, nowIll} from "./statistic";
+// import {illness, deaths, recovers, illnessClear, nowIll} from "./getInfo";
+
+// import {test} from './getInfo';
+import {illness, deaths, recovers, nowIll} from './getInfo';
+
+setTimeout(() => {
+    leftSection();
+}, 900);
+
+function leftSection() {
 
 const commonIllDisplay = document.querySelector("#data__display_ill"),
       commonDeathDisplay = document.querySelector("#data__display_dead"),
@@ -23,7 +32,7 @@ let commonIll, curIll, preLastIll,
     preLastNowIll = nowIll[nowIll.length-2];
 
 //the current data of illness of last day
-for(let i = 0; i<=illnessClear.length; i++) {
+for(let i = 0; i<=illness.length; i++) {
     commonIll = illness[i-1];
     preLastIll = illness[i-2];
     curIll = commonIll - illness[i-2];
@@ -62,58 +71,61 @@ if( (curNowIll/preLastNowIll-1)*100 < 0.1) {
     persentNowIll.style.color = "#228B22";
 };
 
+};
+
+
 
 //test & control errors
-if(!isFinite(commonIll) || commonIll == "") {
-    commonIllDisplay.textContent = "?";
-    curIllDisplay.textContent = "?";
-    persentIll.textContent = "?";
-    curNowIllDisplay.textContent = "?";
-    persentNowIll.textContent = "?";
-    persentNowIll.style.color = "#A53E3E";
-    throw new Error('Left section. Error in data (Common ill)');
-};
+// if(!isFinite(commonIll) || commonIll == "") {
+//     commonIllDisplay.textContent = "?";
+//     curIllDisplay.textContent = "?";
+//     persentIll.textContent = "?";
+//     curNowIllDisplay.textContent = "?";
+//     persentNowIll.textContent = "?";
+//     persentNowIll.style.color = "#A53E3E";
+//     throw new Error('Left section. Error in data (Common ill)');
+// };
 
-if(curNowIll<0) {
-    curNowIllDisplay.textContent = "?";
-    persentNowIll.textContent = "?";
-    throw new Error('Left section. Error in calculation! (nowill)');
-};
+// if(curNowIll<0) {
+//     curNowIllDisplay.textContent = "?";
+//     persentNowIll.textContent = "?";
+//     throw new Error('Left section. Error in calculation! (nowill)');
+// };
 
-if(!isFinite(commonDeath) || commonDeath == "") {
-    curDeathDisplay.textContent = "?";
-    persentDead.textContent = "?";
-    commonDeathDisplay.textContent = "?";
-    curNowIllDisplay.textContent = "?";
-    persentNowIll.textContent = "?";
-    throw new Error('Left section. Error in data (Common death)');
-};
+// if(!isFinite(commonDeath) || commonDeath == "") {
+//     curDeathDisplay.textContent = "?";
+//     persentDead.textContent = "?";
+//     commonDeathDisplay.textContent = "?";
+//     curNowIllDisplay.textContent = "?";
+//     persentNowIll.textContent = "?";
+//     throw new Error('Left section. Error in data (Common death)');
+// };
 
-if(!isFinite(commonRecover) || commonRecover == "") {
-    curRecoverDisplay.textContent = "?";
-    persentRecover.textContent = "?";
-    commonRecoverDisplay.textContent = "?";
-    curNowIllDisplay.textContent = "?";
-    persentNowIll.textContent = "?";
-    throw new Error('Left section. Error in data (Common recover)');
-};
+// if(!isFinite(commonRecover) || commonRecover == "") {
+//     curRecoverDisplay.textContent = "?";
+//     persentRecover.textContent = "?";
+//     commonRecoverDisplay.textContent = "?";
+//     curNowIllDisplay.textContent = "?";
+//     persentNowIll.textContent = "?";
+//     throw new Error('Left section. Error in data (Common recover)');
+// };
 
-if(commonIll-commonDeath-commonRecover !== curNowIll) {
-    curNowIllDisplay.textContent = "?";
-    persentNowIll.textContent = "?";
-    persentNowIll.style.color = "#A53E3E";
-    throw new Error('Left section. Error in calculation nowill! (check the current data of all parts: dead, recover and ill)');
-};
+// if(commonIll-commonDeath-commonRecover !== curNowIll) {
+//     curNowIllDisplay.textContent = "?";
+//     persentNowIll.textContent = "?";
+//     persentNowIll.style.color = "#A53E3E";
+//     throw new Error('Left section. Error in calculation nowill! (check the current data of all parts: dead, recover and ill)');
+// };
 
-if(dates.length<illnessClear.length) {
-    throw new Error('Left section. Error in dates array length!');
-};
+// if(dates.length<illnessClear.length) {
+//     throw new Error('Left section. Error in dates array length!');
+// };
 
-if(curIll<0) {
-    curIllDisplay.textContent = "?";
-    persentIll.textContent = "?";
-    curNowIllDisplay.textContent = "?";
-    persentNowIll.textContent = "?";
-    persentNowIll.style.color = "#A53E3E";
-    throw new Error('Left section. Error: curIll can not be less than zero!');
-};
+// if(curIll<0) {
+//     curIllDisplay.textContent = "?";
+//     persentIll.textContent = "?";
+//     curNowIllDisplay.textContent = "?";
+//     persentNowIll.textContent = "?";
+//     persentNowIll.style.color = "#A53E3E";
+//     throw new Error('Left section. Error: curIll can not be less than zero!');
+// };
