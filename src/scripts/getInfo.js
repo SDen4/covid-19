@@ -44,12 +44,6 @@ async function proceed() {
     for (let i = 0; i < illness.length; i++) {
         nowIll.push(illness[i] - deaths[i] - recovers[i]);
     };
-
-    console.log(deaths);
-    console.log(illness);
-    console.log(dates);
-    console.log(recovers);
-    console.log(nowIll);
 };
 proceed()
 
