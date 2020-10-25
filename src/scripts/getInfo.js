@@ -1,22 +1,31 @@
-const url = 'https://api.covid19api.com/country/russia/status/';
+const url = 'https://api.covid19api.com/total/country/russia/status/';
+// ...{.Date} - get dates
+// ...{.Cases} - info of ills, deaths and recovers quantities
+// .../deaths - info about daeths quantity
+// .../confirmed - info about ill quantity
+// .../recovered - info about recovers quantity
+
 let illness = [], deaths = [], recovers = [], dates = [], nowIll = [];
 
 //get information about ills, deaths, recovers and separating dates array
-async function getData(form, dates) {
-    let response = await fetch(url+form);
+async function getData(typeOfData, getDates) {
+    let response = await fetch(url+typeOfData);
     if (response.ok) {
         let json = await response.json();
-        let arr = []; // new array of data
+        let arr = [];//new array of data
 
         //create new arrays of data
         json.map(res => {
-            if(dates === 'dates') {
+            //get dates
+            if(getDates === 'Date') {
                 let dayValue = res.Date;
                 arr.push(dayValue.slice(0, 10));
-            } else {
+            }
+            //get ills, deaths, recovers
+            else {
                 let dayValue = res.Cases;
                 arr.push(dayValue);
-            }
+            };
         })
         return arr;
     } else {
@@ -25,23 +34,23 @@ async function getData(form, dates) {
 };
 
 //run getting all the data & calculate nowill
-async function pr() {
-    // dates = await getArrayOfDates();
-    dates = await getData('deaths', 'dates');
-    console.log(dates);
+async function proceed() {
+    dates = await getData('deaths', 'Date');
     illness = await getData('confirmed');
-    console.log(illness);
     deaths  = await getData('deaths');
-    console.log(deaths);
-    recovers = await getData('recovered');
-    console.log(recovers);
+    recovers = await getData('recovered')
 
     //calculate the nowill quantity
     for (let i = 0; i < illness.length; i++) {
         nowIll.push(illness[i] - deaths[i] - recovers[i]);
     };
+
+    console.log(deaths);
+    console.log(illness);
+    console.log(dates);
+    console.log(recovers);
     console.log(nowIll);
 };
-pr();
+proceed()
 
 export {illness, deaths, recovers, nowIll, dates};

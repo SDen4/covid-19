@@ -1,4 +1,10 @@
 import {illness, deaths, recovers, nowIll, dates} from './getInfo';
+
+// import {qw} from './getInfo';
+// // qw();
+// let {illness, deaths, recovers, nowIll, dates} = qw();
+// console.log(illness);
+
 import prognosis1 from './prognosis1';
 import prognosis2 from './prognosis2';
 import prognosis3Author from './prognosis3';

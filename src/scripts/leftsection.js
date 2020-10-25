@@ -1,4 +1,10 @@
 import {illness, deaths, recovers, nowIll, dates} from './getInfo';
+// import {qw} from './getInfo';
+// // qw();
+
+// let {illness, deaths, recovers, nowIll, dates} = qw();
+// console.log(illness);
+
 
 
 const commonIllDisplay = document.querySelector('#data__display_ill'),
