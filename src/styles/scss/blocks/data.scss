@@ -230,6 +230,10 @@
     cursor: pointer;
     outline: none;
     transition: .5s;
+
+    //Delete blue mark of tap in mobile version
+    -webkit-tap-highlight-color: transparent;
+
     &:hover {
         background-color: $buttonHover;
     }
