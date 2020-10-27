@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{342:function(n,t){var e=document.querySelector("#data__day");function o(){var n=(new Date).toLocaleString("ru",{day:"numeric",month:"long",year:"numeric",hour:"2-digit",minute:"2-digit"});e.textContent="Сегодня: ".concat(n)}o(),setInterval((function(){return o()}),6e4)}}]);
