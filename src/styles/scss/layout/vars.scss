@@ -1,30 +1,22 @@
 //colors
-$mainBGColor: linear-gradient(90deg, #C4C4C4, #DCDCDC);
-$mainColor: #fff;
-$red: #A53E3E;
-$buttonHover: #8B0000;
-$buttonActive: #800000;
-$modalBlur: rgba(169, 169, 169, .8);
+    $mainBGColor: linear-gradient(90deg, #C4C4C4, #DCDCDC);
+    $mainColor: #fff;
+    $red: #A53E3E;
+    $buttonHover: #8B0000;
+    $buttonActive: #800000;
+    $modalBlur: rgba(169, 169, 169, .8);
 
 //mesuares
-$borderRadius: 5px;
+    $borderRadius: 5px;
 
 //resolutions
-$desktop: 1280px;
-$laptop: 980px;
-$tablet: 768px;
-$smartphone: 480px;
-$smartphoneAdd: 400px;
-$phone: 320px;
+    $desktop: 1280px;
+    $laptop: 980px;
+    $tablet: 768px;
+    $smartphone: 480px;
+    $smartphoneAdd: 400px;
+    $phone: 320px;
 
 //- github pages -//
 //- git add dist && git commit -m "Initial dist subtree commit"
 //- git subtree push --prefix dist origin gh-pages
-
-//- examle of img plug in -//
-//- img(src='/assets/images/1.jpg', alt='')
-
-//- //sample fo rimages in background// - //
-//- .footer {
-//-   background-image: url('/assets/images/2.jpg');
-//- }

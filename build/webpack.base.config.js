@@ -1,13 +1,14 @@
-const path = require("path");
-const fs = require("fs");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const fs = require('fs');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const babel = require('babel-polyfill');
 
 const PATHS = {
     src: path.join(__dirname, '../src'),
     dist: path.join(__dirname, '../dist'),
-    assets: "assets/"
+    assets: 'assets/'
 }
 
 const PAGES_DIR = `${PATHS.src}/pug/pages/`;
@@ -20,49 +21,49 @@ module.exports = {
     },
 
     entry: {
-        app: PATHS.src
+        app: ['babel-polyfill', PATHS.src]
     },
     output: {
         filename: `${PATHS.assets}js/[name].js`,
         path: PATHS.dist,
-        publicPath: ""
+        publicPath: ''
     },
     module: {
         rules: [{
             test: /\.pug$/,
             oneOf: [{
                 resourceQuery: /^\?vue/,
-                use: ["pug-plain-loader"]
+                use: ['pug-plain-loader']
             }, {
                 use: ['html-loader', 'pug-html-loader']
             }]
         },{
             test: /\.js$/,
-            loader: "babel-loader",
-            exclude: "/node_modules/"
+            loader: 'babel-loader',
+            exclude: '/node_modules/'
         },
         {
             test: /\.(png|jpg|gif|svg)$/,
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-                name: "[name].[ext]"
+                name: '[name].[ext]'
             }
         },
         {
             test: /\.scss$/,
             use: [
-                "style-loader",
+                'style-loader',
                 MiniCssExtractPlugin.loader,
                 {
-                    loader: "css-loader",
+                    loader: 'css-loader',
                     options: {sourceMap: true}
                 },
                 {
-                    loader: "postcss-loader",
+                    loader: 'postcss-loader',
                     options: {sourceMap: true, config: {path: `${PATHS.src}/js/postcss.config.js}`}}
                 },
                 {
-                    loader: "sass-loader",
+                    loader: 'sass-loader',
                     options: {sourceMap: true}
                 }
             ],
@@ -70,14 +71,14 @@ module.exports = {
         {
             test: /\.css$/,
             use: [
-                "style-loader",
+                'style-loader',
                 MiniCssExtractPlugin.loader,
                 {
-                    loader: "css-loader",
+                    loader: 'css-loader',
                     options: {sourceMap: true}
                 },
                 {
-                    loader: "postcss-loader",
+                    loader: 'postcss-loader',
                     options: {sourceMap: true, config: {path: `${PATHS.src}/js/postcss.config.js}`}}
                 }
             ]
@@ -89,7 +90,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {from: `${PATHS.src}/images`, to: `${PATHS.assets}/images`},
-            {from: `${PATHS.src}/static`, to: ""}
+            {from: `${PATHS.src}/static`, to: ''}
         ]),
         ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,

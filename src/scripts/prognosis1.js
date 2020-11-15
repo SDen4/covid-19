@@ -10,12 +10,12 @@ const dayTo30Apr = 17;
 //the grow persent by meaning Golikova
 const persent = 1.16;
 //the order number of the prognosis array for the date of the 13th of April
-const start = 40;
+const start = 83;
 
 let prognosis1 = [];
 
 for (let j = 0; j<start-1; j++) {
-    prognosis1.push("");
+    prognosis1.push('');
 };
 
 prognosis1[start-1] = numOfIll;
