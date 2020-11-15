@@ -45,6 +45,6 @@ async function proceed() {
         nowIll.push(illness[i] - deaths[i] - recovers[i]);
     };
 };
-proceed()
+proceed();
 
-export {illness, deaths, recovers, nowIll, dates};
+export {illness, deaths, recovers, nowIll, dates, proceed};

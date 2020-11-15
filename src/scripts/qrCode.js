@@ -11,7 +11,7 @@ qrCode.addEventListener('click', () => {
     qrCode.style.display = 'none';
 });
 
-//close modal window by esc abd enter buttons
+//close modal window by esc and enter buttons
 window.addEventListener('keydown', (e) => {
     if(e.keyCode === 13 || e.keyCode === 27)
     qrCode.style.display = 'none';
