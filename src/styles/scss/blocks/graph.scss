@@ -76,7 +76,7 @@
 
 .graph_detailed-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     @include tablet {
         font-size: 14px;
