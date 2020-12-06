@@ -6,6 +6,7 @@
     border-radius: $borderRadius;
     width: 100%;
     height: 95%;
+
     @include tablet {
         height: 94.5%;
     }
@@ -17,22 +18,28 @@
     border-radius: $borderRadius;
     margin-bottom: 10px;
     font-weight: bold;
+
     @include tabletGrz {
         margin-bottom: 10px;
     }
+
     @include tablet {
         margin-bottom: 5px;
+
         @include smartphoneGrz {
             margin-bottom: 2px;
         }
     }
+
     @include smartphone {
         text-align: center;
         margin-bottom: 10px;
     }
+
     @include smartphoneAdd {
         margin-bottom: 4px;
     }
+
     @include phone {
         margin-bottom: 2px;
     }
@@ -45,6 +52,7 @@
     width: 100%;
     border-radius: $borderRadius;
     font-weight: bold;
+
     @include smartphone {
         align-items: center;
     }
@@ -56,17 +64,21 @@
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
+
     @include desktop {
         flex-direction: column;
     }
+
     @include tablet {
         @include smartphoneGrz {
             margin-bottom: 10px;
         }
     }
+
     @include smartphoneAdd {
         margin-bottom: 10px;
     }
+
     @include phone {
         margin-bottom: 5px;
     }
@@ -86,26 +98,32 @@
     border: 1px solid $red;
     border-radius: $borderRadius;
     margin-bottom: 10px;
+
     @include desktop {
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
+
         &:last-child {
             margin-bottom: 0;
         }
     }
+
     @include tabletGrz {
         margin-bottom: 5px;
     }
+
     @include tablet {
         @include smartphoneGrz {
             margin-bottom: 1px;
         }
     }
+
     @include smartphone {
         margin-bottom: 5px;
     }
-    @include smartphoneAdd{
+
+    @include smartphoneAdd {
         margin-bottom: 2px;
     }
 }
@@ -115,13 +133,17 @@
     justify-content: space-between;
     position: relative;
     width: 100%;
+
     &:last-child {
         margin-bottom: 0;
     }
 }
 
-#data__display_ill, #data__display_dead,#data__display_recover {
+#data__display_ill,
+#data__display_dead,
+#data__display_recover {
     text-align: center;
+
     @include desktop {
         text-align: left;
     }
@@ -130,15 +152,19 @@
 .data__subtitle {
     width: 123px;
     margin: 0 5px 0 10px;
+
     @include desktop {
         min-width: 123px;
     }
+
     @include laptop {
         margin: 0 2px 0 2px;
     }
+
     @include tablet {
         margin: 0 10px;
     }
+
     @include smartphone {
         margin: 0 20px 0 10px;
     }
@@ -147,12 +173,15 @@
 .data__subtitle_common {
     width: unset;
     margin: 0;
+
     @include desktop {
         margin: 0 40px 0 10px;
     }
+
     @include laptop {
         margin: 0 10px 0 2px;
     }
+
     @include tablet {
         margin-left: 10px;
         margin-right: 32%;
@@ -166,24 +195,31 @@
     font-weight: bold;
     width: 100%;
     height: 72%;
+
     @include desktop {
         height: 68%;
     }
+
     @include laptop {
         height: 72%;
     }
+
     @include tablet {
         height: 63%;
     }
+
     @include smartphone {
         height: 64vh;
     }
+
     @include smartphoneAdd {
         height: 73vh;
     }
+
     @include phone {
         height: 90vh;
     }
+
     @include smartphoneGrz {
         height: 70%;
     }
@@ -195,18 +231,21 @@
     position: relative;
     min-height: 40px;
     margin-bottom: 15px;
+
     &:last-child {
         margin-bottom: 0;
     }
+
     @include desktop {
         margin-bottom: 10px;
     }
+
     @include laptop {
         margin-bottom: 5px;
     }
 }
 
-.data__input:checked+.data__button{
+.data__input:checked+.data__button {
     background-color: $buttonActive;
 }
 
@@ -242,13 +281,16 @@
 .data__display {
     width: 60px;
     margin-right: 10px;
+
     @include laptop {
         margin-right: 2px;
     }
+
     @include tablet {
         margin-right: 10px;
     }
-    &:hover + .data__display-modal{
+
+    &:hover+.data__display-modal {
         opacity: 1;
     }
 }
@@ -281,9 +323,11 @@
     border-radius: $borderRadius;
     background-color: $red;
     margin-bottom: 10px;
-    @include desktop{
+
+    @include desktop {
         margin-bottom: 5px;
     }
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -292,14 +336,16 @@
 .data_prognosis {
     padding: 5px 5px;
     transition: .3s;
-    @include desktop{
+
+    @include desktop {
         padding: 3px 5px;
     }
 }
 
 a.data_prognosis {
     width: fit-content;
+
     &:hover {
-        color:$buttonActive;
+        color: $buttonActive;
     }
 }

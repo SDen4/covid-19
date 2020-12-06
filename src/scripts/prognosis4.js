@@ -7,11 +7,11 @@ let currentIllOf2April = 3548; //official quantity of ill people of the 2nd of A
 //the day before first day of this prognosis
 
 
-for(let i = 0; i<start4Sber; i++) {
+for (let i = 0; i < start4Sber; i++) {
     prognosis4Sber.push('');
 }
 
-for(let item in prognosis4) {
+for (let item in prognosis4) {
     currentIllOf2April = currentIllOf2April + prognosis4[item];
     prognosis4Sber.push(currentIllOf2April);
 };

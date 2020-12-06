@@ -1,7 +1,7 @@
 .qr-code {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: $modalBlur;
@@ -21,18 +21,23 @@
     transition: .3s;
     border-radius: $borderRadius;
     margin-right: 10px;
+
     &:hover {
         background-color: $mainColor;
     }
-    &:hover + .data__display-modal_qr {
+
+    &:hover+.data__display-modal_qr {
         opacity: 1;
     }
+
     @include laptop {
         margin-right: 2px;
     }
+
     @include tablet {
         display: none;
     }
+
     @include tabletGrz {
         display: none;
     }

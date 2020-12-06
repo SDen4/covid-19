@@ -20,9 +20,11 @@
     background-color: $red;
     transition: .3s;
     border-radius: $borderRadius;
+
     &:hover {
-        background-color:$buttonHover;
+        background-color: $buttonHover;
     }
+
     &:active {
         background-color: $buttonActive;
     }

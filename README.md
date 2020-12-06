@@ -1,8 +1,8 @@
 ### Denis Skryabin
 
 
-###  Dashboard statistic of the spread Covid-19 in Russia
-# to clone the repo use this:
+### Dashboard statistic of the spread Covid-19 in Russia
+### Clone the repo:
 ```sh
 $ git clone https://github.com/SDen4/covid-19.git
 $ cd covid-19

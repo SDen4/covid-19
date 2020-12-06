@@ -16,20 +16,20 @@ const start = 83;
 
 let prognosis2 = [];
 
-for (let j = 0; j<start-1; j++) {
+for (let j = 0; j < start - 1; j++) {
     prognosis2.push('');
 };
 
-prognosis2[start-1] = numOfIll;
+prognosis2[start - 1] = numOfIll;
 
-for (let i = 0; i <duration; i++) {
-    numOfIll = parseInt(numOfIll*persent);
-    prognosis2[start+i] = numOfIll;
+for (let i = 0; i < duration; i++) {
+    numOfIll = parseInt(numOfIll * persent);
+    prognosis2[start + i] = numOfIll;
 };
 
-let lastDayGrowValue = prognosis2[prognosis2.length-1];
+let lastDayGrowValue = prognosis2[prognosis2.length - 1];
 
-for (let i = 0; i <durationAfter; i++) {
+for (let i = 0; i < durationAfter; i++) {
     prognosis2.push(lastDayGrowValue);
 };
 

@@ -1,54 +1,57 @@
+// ===== gorizontal ===== //
 @mixin desktop() {
-  @media screen and (max-width: $desktop) {
-    @content;
-  }
+    @media screen and (max-width: $desktop) {
+        @content;
+    }
 }
 
 @mixin laptop() {
-  @media screen and (max-width: $laptop) {
-    @content;
-  }
+    @media screen and (max-width: $laptop) {
+        @content;
+    }
 }
 
 @mixin tablet() {
-  @media screen and (max-width: $tablet) {
-    @content;
-  }
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
 }
 
 @mixin smartphone() {
-  @media screen and (max-width: $smartphone) {
-    @content;
-  }
+    @media screen and (max-width: $smartphone) {
+        @content;
+    }
 }
 
 @mixin smartphoneAdd() {
-  @media screen and (max-width: $smartphoneAdd) {
-    @content;
-  }
+    @media screen and (max-width: $smartphoneAdd) {
+        @content;
+    }
 }
 
 
 @mixin phone() {
-  @media screen and (max-width: $phone) {
-    @content;
-  }
+    @media screen and (max-width: $phone) {
+        @content;
+    }
 }
 
+
+// ===== vertical ===== //
 @mixin tabletGrz() {
-  @media screen and (max-height: $tablet) {
-    @content;
-  }
+    @media screen and (max-height: $tablet) {
+        @content;
+    }
 }
 
 @mixin smartphoneGrz() {
-  @media screen and (max-height: $smartphone) {
-    @content;
-  }
+    @media screen and (max-height: $smartphone) {
+        @content;
+    }
 }
 
 @mixin phoneGrz() {
-  @media screen and (max-height: $phone) {
-    @content;
-  }
+    @media screen and (max-height: $phone) {
+        @content;
+    }
 }

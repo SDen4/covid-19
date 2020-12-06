@@ -9,7 +9,7 @@ let illness = [], deaths = [], recovers = [], dates = [], nowIll = [];
 
 //get information about ills, deaths, recovers and separating dates array
 async function getData(typeOfData, getDates) {
-    let response = await fetch(url+typeOfData);
+    let response = await fetch(url + typeOfData);
     if (response.ok) {
         let json = await response.json();
         let arr = [];//new array of data
@@ -17,7 +17,7 @@ async function getData(typeOfData, getDates) {
         //create new arrays of data
         json.map(res => {
             //get dates
-            if(getDates === 'Date') {
+            if (getDates === 'Date') {
                 let dayValue = res.Date;
                 arr.push(dayValue.slice(0, 10));
             }
@@ -37,7 +37,7 @@ async function getData(typeOfData, getDates) {
 async function proceed() {
     dates = await getData('deaths', 'Date');
     illness = await getData('confirmed');
-    deaths  = await getData('deaths');
+    deaths = await getData('deaths');
     recovers = await getData('recovered')
 
     //calculate the nowill quantity
@@ -47,4 +47,4 @@ async function proceed() {
 };
 proceed();
 
-export {illness, deaths, recovers, nowIll, dates, proceed};
+export { illness, deaths, recovers, nowIll, dates, proceed };

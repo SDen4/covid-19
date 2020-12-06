@@ -1,4 +1,4 @@
-import {illness, deaths, recovers, nowIll, dates} from './getInfo';
+import { illness, deaths, recovers, nowIll, dates } from './getInfo';
 import prognosis1 from './prognosis1';
 import prognosis2 from './prognosis2';
 import prognosis3Author from './prognosis3';
@@ -16,14 +16,14 @@ let prognosis1Check = document.querySelector('#prognosis1Check'),
     modal = document.querySelector('.data__modal');
 
 prognosis1Button.addEventListener('click', () => {
-    if(prognosis1Check.checked) {
+    if (prognosis1Check.checked) {
         modal.style.display = 'none';
         typeOfChart = 'area';
         opt3d = false;
         textSubTitle = 'Общее количество';
         chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, textSubTitle);
     } else {
-        if(allRadio.checked) all.click();
+        if (allRadio.checked) all.click();
         modal.style.display = 'flex';
         typeOfChart = 'column';
         opt3d = true;
@@ -51,13 +51,13 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
         },
         plotOptions: {
             area: {
-              stacking: 'normal',
-              lineColor: '#666666',
-              lineWidth: 1,
-              marker: {
+                stacking: 'normal',
+                lineColor: '#666666',
                 lineWidth: 1,
-                lineColor: '#666666'
-              }
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
             }
         },
         credits: {
@@ -100,25 +100,25 @@ function chartFunction(typeOfChart, opt3d, dates, illnessData, deaths, recovers,
         series: [{
             name: 'Заболело',
             data: illnessData
-        },{
+        }, {
             name: 'Сейчас болеет',
             data: nowIll
-        },{
+        }, {
             name: 'Выздоровело',
             data: recovers
-        },{
+        }, {
             name: 'Умерло',
             data: deaths
-        },{
+        }, {
             name: 'Прогноз 1',
             data: prognosisA
-        },{
+        }, {
             name: 'Прогноз 2',
             data: prognosisB
-        },{
+        }, {
             name: 'Прогноз 3',
             data: prognosisC
-        },{
+        }, {
             name: 'Прогноз 4',
             data: prognosisD
         }],
@@ -130,13 +130,13 @@ chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, nowIll, text
 
 //Dynamics data
 //Create dynamic data
-let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers =[];
+let dynamicIllness = [], dynamicDeaths = [], dynamicRecovers = [];
 
 function dynamicFunc(com, dyn) {
-    for(let j = 0; j < com.length-1; j++ ) {
+    for (let j = 0; j < com.length - 1; j++) {
         let delta;
-        if( j<= (com.length-2) ) {
-            delta = com[j+1] - com[j];
+        if (j <= (com.length - 2)) {
+            delta = com[j + 1] - com[j];
         };
         dyn.push(delta);
     };
@@ -154,13 +154,13 @@ all.textContent = 'Общий прирост';
 
 all.addEventListener('click', () => {
     let now;
-    if(allRadio.checked) {
+    if (allRadio.checked) {
         all.textContent = 'Общий прирост';
         textSubTitle = 'Общее количество';
         now = nowIll;
         chartFunction(typeOfChart, opt3d, dates, illness, deaths, recovers, now, textSubTitle);
     } else {
-        if(prognosis1Check.checked) prognosis1Button.click();
+        if (prognosis1Check.checked) prognosis1Button.click();
         all.textContent = 'Динамика прироста';
         textSubTitle = 'Динамика новых случаев';
         now = '';

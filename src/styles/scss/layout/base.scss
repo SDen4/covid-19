@@ -1,175 +1,197 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body,
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 16px;
-  color: $red;
-  margin: 0;
-  background-image: $mainBGPicture;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  @include laptop {
-    @include smartphoneGrz {
-      background-image: none;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 16px;
+    color: $red;
+    margin: 0;
+    background-image: $mainBGPicture;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include laptop {
+        @include smartphoneGrz {
+            background-image: none;
+        }
     }
-  }
-  @include tablet {
-    background-image: none;
-  }
+
+    @include tablet {
+        background-image: none;
+    }
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 1480px;
-  width: 98%;
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @include desktop {
-    @include tabletGrz {
-      height: 119vh;
+    margin: 0 auto;
+    max-width: 1480px;
+    width: 98%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include desktop {
+        @include tabletGrz {
+            height: 119vh;
+        }
     }
-  }
-  @include laptop {
-    @include smartphoneGrz {
-      height: 232vh;
+
+    @include laptop {
+        @include smartphoneGrz {
+            height: 232vh;
+        }
     }
-  }
-  @include tablet {
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 200vh;
-    @include smartphoneGrz {
-      height: 355vh;
+
+    @include tablet {
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 200vh;
+
+        @include smartphoneGrz {
+            height: 355vh;
+        }
+
+        @include phoneGrz {
+            height: 400vh;
+        }
     }
-    @include phoneGrz {
-      height: 400vh;
+
+    @include smartphone {
+        height: 260vh;
     }
-  }
-  @include smartphone {
-    height: 260vh;
-  }
-  @include smartphoneAdd {
-    height: 280vh;
-  }
-  @include phone {
-    height: 335vh;
-  }
+
+    @include smartphoneAdd {
+        height: 280vh;
+    }
+
+    @include phone {
+        height: 335vh;
+    }
 }
 
 .container_author {
-  height: unset;
-  flex-direction: column;
-  justify-content: center;
+    height: unset;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98%;
 }
 
 .content__left {
-  width: 30%;
-  @include laptop {
-    width: 32%;
-    @include smartphoneGrz {
-      height: 100%;
+    width: 30%;
+
+    @include laptop {
+        width: 32%;
+
+        @include smartphoneGrz {
+            height: 100%;
+        }
     }
-  }
-  @include tablet {
-    width: 98%;
-    height: 40%;
-    @include smartphoneGrz {
-      height: 54%;
+
+    @include tablet {
+        width: 98%;
+        height: 40%;
+
+        @include smartphoneGrz {
+            height: 54%;
+        }
     }
-  }
 }
 
 .content__right {
-  width: 69%;
-  @include laptop {
-    width: 67%;
-    @include smartphoneGrz {
-      height: 100%;
+    width: 69%;
+
+    @include laptop {
+        width: 67%;
+
+        @include smartphoneGrz {
+            height: 100%;
+        }
     }
-  }
-  @include tablet {
-    width: 98%;
-    height: 59.5%;
-    @include smartphoneGrz {
-      height: 45%;
+
+    @include tablet {
+        width: 98%;
+        height: 59.5%;
+
+        @include smartphoneGrz {
+            height: 45%;
+        }
     }
-  }
 }
 
 .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 4%;
-  font-weight: bold;
-  border-radius: $borderRadius;
-  background: $mainBGColor;
-  color: $red;
-  @include tablet {
-    height: 5%;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 4%;
+    font-weight: bold;
+    border-radius: $borderRadius;
+    background: $mainBGColor;
+    color: $red;
+
+    @include tablet {
+        height: 5%;
+    }
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  width: 92%;
-  height: 94%;
-  @include desktop {
-    height: 98%;
-  }
-  @include laptop {
-    width: 98%;
-  }
-  @include tablet {
-    width: 97%;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 92%;
+    height: 94%;
+
+    @include desktop {
+        height: 98%;
+    }
+
+    @include laptop {
+        width: 98%;
+    }
+
+    @include tablet {
+        width: 97%;
+    }
 }
 
 .wrapper_graph {
-  height: 97%;
-  width: 97%;
-  justify-content: space-around;
+    height: 97%;
+    width: 97%;
+    justify-content: space-around;
 }
 
 .wrapper_sliders {
-  justify-content: space-evenly;
+    justify-content: space-evenly;
 }
 
 .wrapper_author {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 button {
-  border: 0;
-  cursor: pointer;
+    border: 0;
+    cursor: pointer;
 }
 
 ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 h1,
@@ -178,26 +200,26 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
-  margin: 0;
+    font-weight: normal;
+    margin: 0;
 }
 
 p {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 button[type='button'] {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 a {
-  color: inherit;
-  cursor: pointer;
+    color: inherit;
+    cursor: pointer;
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
 }

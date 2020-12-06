@@ -1,33 +1,41 @@
 .graph {
     height: 83%;
+
     @include laptop {
         height: 81%;
     }
+
     @include tablet {
         height: 77%;
     }
+
     @include smartphone {
         height: 72.5%;
     }
+
     @include smartphoneGrz {
         height: 76%;
-      }
+    }
 }
 
 .graph_detailed {
     height: 16%;
+
     @include laptop {
         height: 18%;
     }
+
     @include tablet {
         height: 22%;
     }
+
     @include smartphone {
         height: 27%;
     }
+
     @include smartphoneGrz {
         height: 23%;
-      }
+    }
 }
 
 .highcharts-figure {
@@ -41,11 +49,13 @@
 #container {
     height: 95%;
     border-radius: $borderRadius;
+
     @include laptop {
         @include smartphoneGrz {
             height: 100%;
         }
     }
+
     @include tablet {
         height: 100%;
     }
@@ -55,9 +65,11 @@
     color: $red;
     font-weight: bold;
     text-align: center;
+
     @include desktop {
         font-size: 14px;
     }
+
     @include smartphoneGrz {
         font-size: 12px;
     }
@@ -69,6 +81,7 @@
             display: none;
         }
     }
+
     @include tablet {
         display: none;
     }
@@ -78,9 +91,11 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
     @include tablet {
         font-size: 14px;
     }
+
     @include smartphone {
         flex-direction: column;
     }
@@ -88,8 +103,10 @@
 
 .graph_detailed-notice {
     display: flex;
+
     @include smartphone {
         margin-bottom: 5px;
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -105,6 +122,7 @@
     color: $red;
     text-decoration: none;
     margin-left: 10px;
+
     @include smartphone {
         margin-left: 5px;
     }
